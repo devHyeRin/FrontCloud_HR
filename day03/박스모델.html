@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            /*margin: 0 auto;*/    /*0은 위아래, auto는 좌우*/ 
+            /*mmargin : 20px;   4군데 20px*/
+            margin: 10px 20px 30px 40px;   /*위 오른쪽 아래쪽 왼쪽*/
+
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 30px;
+            margin-left: 40px;
+
+            /*테두리 기준으로 안쪽 여백*/
+            padding: 20px;
+        }
+        a{
+            /*크기를 지정할 수 없음. 마진 위 아래를 줄 수 없음*/
+            /*크기 지정 방법 : inline-block으로 display를 변경하고 마진을 주거나
+            a태그를 div 태그로 한번 감싸면 적용됨*/
+            /*width: 100px; 적용안됨*/
+            /*height: 100px; 적용안됨*/
+            border: 1px solid black;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        input{
+            width: 200px;
+            height: 200px;
+
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>박스모델</h2>
+    <p>태그는 브라우저에서 박스(box)형태로 표현된다.</p>
+    <p>콘텐츠 영역, 패딩(padding), 테두리(border), 마진(margin)으로 구성됨</p>
+
+    <div class="box">html 수업</div>
+
+    <a href="https://www.naver.com">hyper text 링크 여기를 누르시오</a>
+
+    <input type="text">
+
+</body>
+</html>

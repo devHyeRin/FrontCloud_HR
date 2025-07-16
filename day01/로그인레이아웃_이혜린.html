@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 레이아웃</title>
+    <style>
+        /*레이아웃 css
+        - 클래스 선택자를 이용해서 원하는 영역 선택하기
+            1) 태그에 class명 지정함
+            2) 특정 class명을 가진 요소를 선택함
+            3) css 스타일 적용
+            4) .클래스명 
+        */
+        .wrap{
+            width: 400px;
+            /*height: 400px;*/
+            border: 1px solid black;
+            padding: 20px; /*안쪽 여백*/
+
+            margin: 0 auto;  /*왼쪽, 오른쪽 여백을 같게하여 화면 가운데 배치*/
+            margin-top: 100px;  /*개별속성: 위쪽 여백 늘리기*/
+            border-radius: 10px;
+        }
+        .image{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .login-info{
+            width: 300px;
+            /*height: 100px;*/
+            padding: 20px;
+            border: 1px solid black;
+            margin: 50px auto;
+        }
+        .login-info input{ /*부모 아래 input 영역 스타일*/
+            width: 100%; /*부모 기준으로 가로 길이*/
+            box-sizing: border-box;  /*길이가 딱 맞아짐*/
+            padding: 10px;
+        }
+        .login-info button{
+            width: 100%;
+        }
+        .image img{
+            width: 100%;  /*image 태그가 위에 200씩 설정되어 있기 때문에 자동으로 크기 맞춰짐!*/
+        }
+    </style>
+</head>
+<body>
+    <!--div 태그는 높이가 없음(높이를 만드려면 height 스타일 속성 사용)-->
+    <div class="wrap">
+        <!--이미지 영역-->
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUAfyVe3Easiycyh3isP9wDQTYuSmGPsPQvLIJdEYvQ_DsFq5Ez2Nh_QjiS3oZ3B8ZPfK9cZQyIStmQMV1lDPLw" alt="로그인 배경이미지">
+        </div>
+        <!--로그인 정보 영역-->
+        <div class="login-info"> <!--부모태그-->
+            <!--자식태그-->
+            <input type="text">
+            <input type="password">
+            <button>로그인</button>
+        </div>
+    </div>
+</body>
+</html>

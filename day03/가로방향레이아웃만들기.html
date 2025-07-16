@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1400px;
+            border: 1px solid black;
+            height: 300px;
+
+            /*display:flex*/
+            /*가로로 배치할 부모에다 display:flex 속성을 적용해야 한다.*/
+            display: flex;   /*부모 영역(wrap)에 가로로 배치됨*/
+        }
+        .item{
+            width: 33.3%;
+            height: 300px;
+            border: 1px solid rgb(199, 39, 39);
+        }
+    </style>
+</head>
+<body>
+    <!--footer 레이아웃-->
+    <!--display : flex 속성 사용하기-->
+    <div class="wrap">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+</body>
+</html>

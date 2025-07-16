@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+    <style>
+        .wrap{
+            width: 800px;
+            border: 1px solid rgb(179, 169, 169);
+            padding: 10px;
+            border-radius: 20px; /*모서리 둥글게*/
+
+            margin: 0 auto;
+        }
+        .img{
+            width: 700px;
+            height: 400px;
+            /*background-color: blue;*/
+            background-image: url('https://www.healtip.co.kr/news/photo/201907/1558_2739_5723.jpg');
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+        }
+    
+        /*상품정보 css*/
+        .info{
+            /*border: 1px solid black;*/
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+        /*주문정보 css*/
+        .order-wrap{
+            /*border: 1px solid black;*/
+            width: 80%;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+        .order-wrap input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            box-sizing: border-box;    /*자주 사용, 박스 안으로 */
+            margin-bottom: 20px;
+        }
+        .order-wrap select{
+            width: 10%;
+            padding: 10px;  
+            margin-bottom: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .order-wrap button{
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: none;
+        }
+        span{
+            color: rgb(209, 33, 33);
+        }
+        .order-wrap .btn_cart{
+            background-color: rgb(209, 122, 122);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="goods-info">
+            <!--상품이미지-->
+            <div class="img"></div>
+            <!--상품 정보-->
+            <div class="info">
+                <h1>고당도 수박</h1>
+                <p>논산에서 수확한 싱싱한 수박</p>
+                <h3 style="display: inline; margin-right: 10px;"><span>30,000원</span></h3>
+                <span style="background-color: red; color: white; border-radius: 5px; padding: 1px;">Best</span>
+                <hr>
+            </div>
+        </div>
+        <!--주문영역-->
+        <div class="order-wrap">
+            <div><h3>주문하기</h3></div>
+            <div>수량
+                <select>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+            <div>주문자 이름 <input type="text" placeholder="이름을 입력해주세요."></div>
+            <div>전화번호<input type="text" placeholder="전화번호를 입력해주세요."></div>
+            <div>주소<input type="text" placeholder="주소를 입력해주세요."></div>
+            <div>
+                <button class="btn_cart">장바구니</button>
+                <button class="btn_order">구매하기</button>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

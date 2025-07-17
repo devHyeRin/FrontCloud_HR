@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+
+            /*요소를 일자로 정렬할 때 사용*/
+            display: flex;
+            justify-content: center;   /*가운데 정렬*/
+            /*justify-content: space-between;  3개 중 양쪽 끝으로 붙음*/
+            /*justify-content: space-around;   3개 중 양쪽 끝에서 살짝 떨어져서 배치됨*/
+        }
+        .item{
+            border: 1px solid black;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+</body>
+</html>

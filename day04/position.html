@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            height: 200px;
+
+            position: relative;
+        }
+
+        /*left, top, bottom, right => 기본 postion에서는 적용되지 않는다*/
+        /*position:static ; => default*/
+        .item{
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+            
+            position: absolute;
+            right: 0;      /*이거만 단독으로 쓰면 적용되지 않음!*/
+            top: 10px;     /*부모에 postion, 자식에 postion*/
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>부모를 기준으로 자식요소를 원하는 위치에 배치하려면</h2>
+    <ul>
+        <li>부모 영역에 position:relative;</li>
+        <li>자식 요소에 position:absolute</li>
+    </ul>
+    <!--검색바 같은 거 만들 때 사용-->
+    <div class="wrap">
+        <div class="item"></div>
+
+    </div>
+</body>
+</html>

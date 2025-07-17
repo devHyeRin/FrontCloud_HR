@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            width: 910px;
+            margin: 0 auto;
+            display: flex;    /*flex를 쓰려면 부모에다가 flex 속성을 쓰면 됨*/
+            flex-wrap: wrap;   /*flex의 기본값은 줄바꿈을 하지 않고 옆으로 나열됨*/
+
+            /*보더를 하면 박스가 커짐 + 기본 padding 값이 있음*/
+            /*box-sizing: border-box;*/
+        }
+        .item{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!--메뉴, footer, 상품 리스트 만들 때 ul/li 많이 사용-->
+    <!--
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+    -->
+    <div class="wrap">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+</body>
+</html>

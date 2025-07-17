@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search_bar{
+            width: 300px;
+            height: 50px;
+            border: 3px solid skyblue;
+            border-radius: 30px;
+
+            /*정렬*/
+            display: flex;
+            justify-content: space-around;   /*양 끝에 여백*/
+            align-items: center;   /*부모를 기준으로 정중앙에 배치-정렬기능 사용*/
+        }
+        .search_btn{
+            width: 40px;
+            height: 40px;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6JO-CB3HSZIPWlJl_5K9T2kEUfyo0qtYE3Q&s");
+            background-position: center;
+            background-size: cover;
+        }
+        .search_word{
+            border: none;
+            outline: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search_bar">
+        <input type="text" class="search_word">
+        <div class="search_btn"></div>
+    </div>
+</body>
+</html>

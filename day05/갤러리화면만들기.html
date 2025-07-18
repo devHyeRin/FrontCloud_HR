@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery-wrap{     /*버튼 영역의 부모*/
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+
+            margin: 0 auto;
+            position: relative;
+        }
+        .board{
+            width: 500px;
+            height: 500px;
+            /*background-color: antiquewhite;*/
+            
+            background-image: url('https://contents.kyobobook.co.kr/sih/fit-in/400x0/pdt/8809895820142.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .prev{
+            width: 30px;
+            height: 60px;
+            background-color: blue;
+
+            position: absolute;    /*요소들끼리 붙이고 싶을 때 position 속성 사용하기!*/
+            top: 220px;
+            left: -15px;
+        }
+        .next{
+            width: 30px;
+            height: 60px;
+            background-color: red;
+
+            position: absolute;
+            top: 220px;
+            right: -15px;
+        }
+    </style>
+</head>
+<body>
+    <!--갤러리 만들기-->
+    <div class="gallery-wrap">
+        <!--이미지 영역-->
+        <div class="board"></div>
+        <!--버튼 : div로 표현-->
+        <!--버튼은 부모를 기준으로 사진 옆으로 붙이면 됨!-->
+        <div class="prev"></div>
+        <div class="next"></div>
+
+    </div>
+</body>
+</html>

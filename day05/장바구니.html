@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            width: 900px;
+            padding: 10px;
+            font-size: 12px;
+
+            margin: 0 auto;
+        }
+        .table-wrap img{
+            width: 60px;
+            height: 60px;
+        }
+        table{
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td, th{
+            border: 1px solid black;
+            height: 38px;
+            padding: 5px;
+            width: 20%;
+        }
+        .order-wrap{
+            border: 1px solid black;
+            margin-top: 30px;
+            padding: 10px;
+        }
+        .order-price{
+            color: red;
+        }
+        .order{
+            text-align: right;
+        }
+        button{
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(209, 209, 209, 0.589);
+            border: none;
+        }
+        .number{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="table-wrap">
+            <table>
+                <caption><h2>CART LIST <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8nCzdPgFi5PUKzMTRTNO4pYMstTaZngDbg&s"></h2></caption>
+                <!--제목영역-->
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>상품명</th>
+                        <th>가격</th>
+                        <th>구매수량</th>
+                        <th>구매가격</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox">선택</td>
+                        <td>핸드폰</td>
+                        <td class="number">30000</td>
+                        <td><input type="text" value="1"></td>
+                        <td class="number">30000</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox">선택</td>
+                        <td>핸드폰</td>
+                        <td class="number">30000</td>
+                        <td><input type="text" value="1"></td>
+                        <td class="number">30000</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox">선택</td>
+                        <td>핸드폰</td>
+                        <td class="number">30000</td>
+                        <td><input type="text" value="1"></td>
+                        <td class="number">30000</td>
+                    </tr>
+                </tbody>
+            </table>
+             <p>
+                <button>선택삭제</button>
+            </p>
+        </div>
+        <div class="order-wrap">
+            <p class="order">
+                합계 <span class="order-price">90000</span>원    <!--특정 글자만 스타일하고 싶을 때 span 태그 사용하기!-->
+            </p>
+        </div>
+    </div>
+</body>
+</html>

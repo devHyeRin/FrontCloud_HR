@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            display: flex;
+            border: 1px solid black;
+        }
+        .menu-item{
+            border: 1px solid black;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+
+            position: relative;    /*하위 메뉴의 부모 (히든메뉴)*/
+        }
+        .menu-item:hover .hidden-sub-menu{
+            display: block;    /*마우스 올렸을 때 보이게 하는 것*/
+        }
+        .hidden-sub-menu{
+            border: 1px solid black;
+            width: 100%;
+            font-size: 12px;
+            background-color: #ccc;
+
+            display: none;   /*자주쓰는 코드 - 메뉴가 안보이게 해줌*/
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <!--상위 메뉴-->
+        <li class="menu-item">빵
+            <!--하위 메뉴-->
+            <ul class="hidden-sub-menu">
+                <li>빵 하위메뉴1</li>
+                <li>빵 하위메뉴2</li>
+                <li>빵 하위메뉴3</li>
+                <li>빵 하위메뉴4</li>
+            </ul>
+        </li>
+        <li class="menu-item">과일
+            <!--하위 메뉴-->
+            <ul class="hidden-sub-menu">
+                <li>과일 하위메뉴1</li>
+                <li>과일 하위메뉴2</li>
+                <li>과일 하위메뉴3</li>
+                <li>과일 하위메뉴4</li>
+            </ul>
+        </li>
+        <li class="menu-item">생선
+            <!--하위 메뉴-->
+            <ul class="hidden-sub-menu">
+                <li>생선 하위메뉴1</li>
+                <li>생선 하위메뉴2</li>
+                <li>생선 하위메뉴3</li>
+                <li>생선 하위메뉴4</li>
+            </ul>
+        </li>
+        <li class="menu-item">고기</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 페이지</title>
+    <style>
+        /*전체 틀*/
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /*header css*/
+        .header{
+            width: 1600px;
+            height: 140px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .titleLogo img{
+            width: 260px;
+            height: 130px;
+            margin-left: 30px;
+        }
+        .search{
+            display: flex;
+            align-items: center;
+        }
+        .search input{
+            width: 300px;
+            height: 35px;
+            border: none;
+            border-bottom: 3px solid rgb(236, 122, 118);
+            margin-right: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+        .search input:focus{
+            padding: 3px 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 0.5px rgba(141, 114, 143, 0.5);
+        }
+        .search img{
+            width: 40px;
+            height: 40px;
+        }
+        .search button{
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .headerMenu ul{
+            display: flex;
+        }
+        .menu li{
+            padding: 10px;
+            margin-right: 20px;
+            border-bottom: 2.5px solid rgb(173, 169, 169);
+            color: rgb(121, 118, 118);
+        }
+        .menu li:hover{
+            border-bottom: 2.5px solid black;
+            color: black;
+            cursor: pointer;
+        }
+        .headerMenu a{
+            text-decoration: none;
+            color: rgb(121, 118, 118);
+        }
+        .headerMenu a:hover{
+            color: black;
+        }
+        /*nav css*/
+        .nav{
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            border-bottom: 3px solid rgb(73, 73, 73);
+        }
+        .category{
+            width: 1550px;
+            margin: 0 auto;
+            padding: 3px;
+        }
+        .navCategory li{
+            margin-right: 30px;
+            font-weight: bold;
+        }
+        /*nav-hidden_sub_menu*/
+        .main_menu{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav_item{
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            position: relative;  /*각 카테고리 부모 기준점*/
+        }
+        .nav_item:hover{
+            background-color: #ffe0f0;
+            border-radius: 7px;
+        }
+        .hidden_sub_menu{
+            width: 200px;     /*부모와 같은 너비로*/ 
+            box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
+            border-radius: 6px;
+            padding: 5px 0;
+            background-color: #f5f5f5;
+
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        /*하위메뉴 보이게 설정*/
+        .nav_item:hover .hidden_sub_menu{
+            display: block;
+        }
+        .hidden_sub_menu li{
+            width: 100%;
+            padding: 10px 0;
+            color: #444;
+            font-size: 14px;
+        }
+        .hidden_sub_menu li:hover{
+            background-color: #ffe0f0;
+            color: #e91e63;
+        }
+
+        /*footer css*/
+        .footer{
+            border-top: 3px solid gray;
+            background-color: #ffe0f0;
+        }
+        .wid{
+            width: 1550px;
+            margin: 0 auto;
+        }
+        .footer ul{
+            display: flex;
+        }
+        .footer1{
+            padding: 10px;
+        }
+        .footer1_wrap{
+            background-color: #f5f5f5c9;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.496);
+        }
+        .footer1 ul{
+            padding: 10px 30px;
+        }
+        .footer1 li{
+            margin-right: 60px;
+            border-bottom: 1px solid rgb(179, 177, 177);
+        }
+        .footer1 li:hover{
+            border-bottom: 2px solid black;
+        }
+        .footer2_wrap{
+            line-height: 35px;
+        }
+        .footer2_cnt{
+            display: flex;
+            
+        }
+        .footer2_cnt .cnt{
+            width: 100%;
+        }
+        .footer3 ul{
+            justify-content: right;
+        }
+        .footer3 img{
+            width: 40px;
+            height: 40px;
+            padding: 7px 7px 0 0;
+        }
+        .footer3_wrap{
+            padding-bottom: 20px;
+        }
+
+        /*주문css*/
+        .order{
+            margin: 50px 0 90px 0;
+        }
+        .order_wrap{
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .wrap2{
+            margin: 0 0 60px 0;
+        }
+        .order_content{
+            position: absolute;
+            top: 0;
+            left: 52%;
+        }
+        .order_count{
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order_count select{
+            height: 40px;
+            font-size: 17px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .order_img, .order_content{
+            display: inline-block;
+        }
+        .order_content{
+            width: 550px;
+        }
+        .order_content h3{
+            color: rgb(206, 45, 45);
+            font-size: 22px;
+        }
+        .line{
+            border: 1px solid #e7e4e4;
+            margin: 40px 0;
+        }
+        .order_all{
+            margin: 20px 0;
+            border-bottom: 2px solid rgb(206, 45, 45);
+            color: rgb(206, 45, 45);
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+        }
+        .order_btn{
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+        }
+        .order_btn button{
+            font-size: 20px;
+            width: 50%;
+            height: 50px;
+            cursor: pointer;
+        }
+        .order_btn button:first-child{
+            background-color: #fff;
+            border: 1px solid #cd4b4b;
+            color: #cd4b4b;
+        }
+        .order_btn button:last-child{
+            background-color: #f78181;
+            border: none;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!--전체 틀-->
+    <div class="mainPage">
+        <!--header 영역-->
+        <div class="header">
+            <!--title(logo)-->
+            <div class="titleLogo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDOzGLnoUkokLCaPYpVgAI9LTQwHdiBDWhig&s" alt="로고">
+            </div>
+            <!--searchBar-->
+            <div class="searchBar">
+                <div class="search">
+                    <input type="text">
+                    <button><img src="./검색로고.png" alt="검색 이미지"></button>
+                </div>
+            </div>
+            <!--menu-->
+            <div class="headerMenu">
+                <div class="menu">
+                    <ul>
+                        <li><a href="./login.html" target="_self">로그인</a></li>
+                        <li>주문배송</li>
+                        <li>공지사항</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--nav 영역-->
+        <div class="nav">
+            <!--nav 영역 : 카테고리-->
+            <div class="category">
+                <div class="navCategory">
+                    <ul class="main_menu">
+                        <li class="nav_item">스킨케어
+                            <ul class="hidden_sub_menu">
+                                <li><a href="./order.html">스킨/토너</a></li>
+                                <li>크림</li>
+                                <li>로션</li>
+                                <li>미스트/오일</li>
+                            </ul>
+                        </li>
+                        <li class="nav_item">메이크업
+                            <ul class="hidden_sub_menu">
+                                <li>립메이크업</li>
+                                <li>베이스메이크업</li>
+                                <li>아이메이크업</li>
+                            </ul>
+                        </li>
+                        <li class="nav_item">헤어케어
+                            <ul class="hidden_sub_menu">
+                                <li>샴푸/린스</li>
+                                <li>트리트먼트/팩</li>
+                                <li>헤어에센스</li>
+                                <li>염색약</li>
+                            </ul>
+                        </li>
+                        <li class="nav_item">바디케어
+                            <ul class="hidden_sub_menu">
+                                <li>샤워/입욕</li>
+                                <li>로션/오일</li>
+                                <li>핸드케어</li>
+                                <li>풋케어</li>
+                            </ul>
+                        </li>
+                        <li class="nav_item">건강식품
+                            <ul class="hidden_sub_menu">
+                                <li>비타민</li>
+                                <li>영양제</li>
+                                <li>슬리밍/이너뷰티</li>
+                            </ul>
+                        </li>
+                        <li class="nav_item">뷰티소품
+                            <ul class="hidden_sub_menu">
+                                <li>메이크업소품</li>
+                                <li>아이소품</li>
+                                <li>헤어소품</li>
+                                <li>뷰티잡화</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>  
+            </div>
+        </div>
+        
+        <!--주문페이지-->
+        <div class="order">
+            <div class="order_wrap">
+                <div class="wrap2">
+                <div class="order_img">
+                    <img src="https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0012/A00000012947415ko.jpg?l=ko" alt="주문 상품">
+                </div>
+                <div class="order_content">
+                    <p>코스알엑스</p>
+                    <h2>코스알엑스 프로폴리스 토너 280ml</h2>
+                    <p><h3>15,800원</h3></p>
+                    <h5>배송정보</h5>
+                    <p>2,500원 (2만원이상 구매 시 무료배송)</p>
+                    <div class="line"></div>
+                    <div class="order_count">
+                        <p>구매수량</p>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                    <div class="order_all">
+                        <p>금액 합계</p>
+                        <p>15,800원</p>
+                    </div>
+                    <div class="order_btn">
+                        <button>장바구니</button>
+                        <button>바로구매</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!--footer 영역-->
+        <div class="footer">
+            <div class="footer1_wrap">
+                <!--footer 맨위-->
+                <div class="footer1 wid">
+                    <ul>
+                        <li>회사소개</li>
+                        <li>이용약관</li>
+                        <li>고객센터</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer2_wrap">    
+                <!--footer 중앙-->
+                <div class="footer2 wid">
+                    <!--회사로고-->
+                    <div class="footer2_logo">
+                        <h1>BEAUTYID</h1>
+                    </div>
+                    <!--내용 시작-->
+                    <div class="footer2_cnt">
+                        <!--내용1-->
+                        <div class="cnt">
+                            <h3>뷰티아이디(주)</h3>
+                            <p>대표자 : 이혜린 | 사업자등록번호 : 000-00-00000</p>
+                            <p>주소 : 서울특별시 마포구 양화로 122</p>
+                            <p><a href="">사업자 정보확인></a></p>
+                        </div>
+                        <!--내용2-->
+                        <div class="cnt">
+                            <p>이용약관</p>
+                            <p><strong>개인정보처리방침</strong></p>
+                            <p>청소년보호방침</p>
+                            <p>이메일무단수집거부</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer3_wrap">
+                <!--footer 맨밑-->
+                <div class="footer3 wid">
+                    <ul>
+                        <li><img src="./인스타.png" alt="인스타 로고"></li>
+                        <li><img src="./유튜브.png" alt="유튜브 로고"></li>
+                        <li><img src="./카카오톡.png" alt="카톡 로고"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

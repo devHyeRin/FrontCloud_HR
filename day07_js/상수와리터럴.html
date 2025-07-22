@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //상수 : const 변수
+        //변수의 상수화
+        //변수를 만들고 값을 이용만 하는 경우, 값을 변경할 수 없게 만드는 것
+        //대문자규칙(변수와 구별하기 위해 대문자 사용)
+        const TAX = 0.01;
+        console.log(TAX);
+        //TAX = 0.02;    TAX의 변수는 상수로 선언되었기 때문에 값 변경X
+
+        //리터럴(값 자체) => 상수
+        let kbAccount = 100;   // 100이 리터럴
+        const TAX2 = 0.03;   // 0.03이 리터럴
+     
+        //리터럴 vs 상수
+        let price = 1000;
+        let 금액부가세 = price * 0.1;   //값 자체를 사용하는 방법
+        console.log(금액부가세);
+
+        const TAX3 = 0.1;
+        let productPrice = 1000;
+        let 상품부가세 = productPrice * TAX3;  //const 상수 사용하는 방법(권장)
+        console.log(상품부가세);
+
+        //값 자체를 사용하는 것보다 const 상수를 사용하는 것이
+        //가독성과 유지보수에 좋다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

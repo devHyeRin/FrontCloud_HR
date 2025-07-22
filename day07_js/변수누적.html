@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //변수에 누적하기
+        let cnt = 1;   //변수 선언 및 초기화
+
+        /*
+        cnt = 1;
+        console.log(cnt);       //1
+
+        cnt = 2;
+        console.log(cnt);       //2
+
+        cnt = 3;
+        console.log(cnt);       //3
+        */
+        // 여기까지 코드는 값이 계속 변경됨 (누적x)
+
+        //변수의 값을 누적하려면 대입연산자 사용해야함 (+=, -=)
+        //변수의 기존값을 사용해야한다.
+        cnt =  cnt + 1;
+        console.log(cnt);       //1
+        
+        cnt =  cnt + 1;
+        console.log(cnt);       //2
+        
+        cnt =  cnt + 1;
+        console.log(cnt); 
+
+    </script>
+</body>
+</html>

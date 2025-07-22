@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1 ~ 10까지의 합
+        //1 2 3 4 5 6 7 8 9 10
+
+        //방법1 : 직접 다 더하기
+        /*
+        alert(1+2+3+4+5+6+7+8+9+10);
+        console.log(1+2+3+4+5+6+7+8+9+10)
+        */
+
+        //방법2 : 변수사용 (변수 10개)
+        
+        //방법3 : 누적
+        //출력값을 저장할 변수 : sum
+        let sum = 0;
+        let su = 1;     //su -> 1
+        sum += su;    //sum -> 1
+
+        su += 1;     //su -> 2
+        sum += su;    // sum -> 3
+
+        su += 1;    //su -> 3
+        sum += su;    // sum -> 6
+
+        su += 1;    //su -> 4
+        sum += su;    // sum -> 10
+
+        su += 1;    //su -> 5
+        sum += su;    // sum -> 15
+        
+        su += 1;    //su -> 6
+        sum += su;    // sum -> 21
+
+        su += 1;    //su -> 7
+        sum += su;    // sum -> 28
+
+        su += 1;    //su -> 8
+        sum += su;    // sum -> 36
+
+        su += 1;    //su -> 9
+        sum += su;    // sum -> 45
+
+        su += 1;    //su -> 10
+        sum += su;    // sum -> 55
+
+        console.log(sum);
+
+        //방법3의 문제점 : 중복되는 코드가 많음, 너무 긴 코드
+        // -> 해결방법 : 반복문 사용
+
+        //반복문1
+        let sum2 = 0;
+        
+        for(let number = 0; number < 11; number++){
+            sum2 += number; 
+        }
+
+        console.log(sum2);
+
+        //반복문2
+        let i = 0;
+        let total = 0;
+        while(i < 10){
+            i += 1;
+            total += i;
+        }
+        console.log(total);
+
+    </script>
+</body>
+</html>

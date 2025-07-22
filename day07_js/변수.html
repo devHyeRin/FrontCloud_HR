@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            변수 : 데이터를 저장하기 위한 메모리 공간이다(=메모리 블럭)
+            값을 담기 위해 이름을 붙인 상자(=메모리 블럭)
+            컴퓨터 메모리 공간의 일부이다
+            메모리블럭에 프로그래머가 식별하기 위해 이름을 붙인 것
+        */
+       /*
+        변수의 역할 : 기억(저장), 이용
+        값은 이용하기 위해 저장된다(필요없는 것은 저장할 필요 없음) 
+
+        변수선언 방식
+        let/const(현재), var(예전)
+
+        변수 이름 : 의미있게 작성
+       */
+
+        let studentName = "이혜린";    //변수에 이름을 저장
+        alert(studentName);     //출력으로 이용
+
+        studentName = "치웅";
+        alert(studentName);
+
+        //공간(상자) -> "이혜린"   처음 저장된 변수값
+        //공간(상자) -> "치웅"     중간에 변경된 변수값 -> 처음 저장된 값은 사라짐
+
+        let kbAccount = 1000000;  //백만원
+        kbAccount = 1100000;   //백십만원으로 변경
+
+        //변수는 하나의 값을 기억하는 공간
+        //새로운 값을 기억하면 기존의 값은 지워짐
+    </script>
+</body>
+</html>

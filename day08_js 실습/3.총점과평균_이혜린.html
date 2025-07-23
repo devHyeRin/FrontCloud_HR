@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>총점, 평균</title>
+</head>
+<body>
+
+    <script>
+        let name = prompt("이름을 입력해주세요.");
+        let korScore = parseInt(prompt("국어 점수를 입력해주세요."));
+        let engScore = parseInt(prompt("영어 점수를 입력해주세요."));
+        let matScore = parseInt(prompt("수학 점수를 입력해주세요."));
+        let totalScore = parseInt(korScore + engScore + matScore);
+        let evScore = parseFloat(totalScore/3).toFixed(3);
+
+        console.log("이름 : " + name);
+        console.log("국어 : " + korScore + " 영어 : " + engScore + " 수학 : " +  matScore);
+        console.log("총점 : " + totalScore);
+        console.log("평균 : " + evScore);
+    </script>
+</body>
+</html>

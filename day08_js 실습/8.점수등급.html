@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점수 등급</title>
+</head>
+
+<body>
+    <script>
+        let userScore = parseInt(prompt("점수 입력 : "));
+        let grade;
+
+        if (userScore >= 0 && userScore <= 100) {
+            if (userScore >= 90) {
+                grade = "A";
+            }
+            else if (userScore >= 80) {
+                grade = "B";
+            }
+            else if (userScore >= 70) {
+                grade = "C";
+            }
+            else if (userScore >= 60) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+            document.write("입력한 점수 : " + userScore + "<br>");
+            document.write("등급 : " + grade);
+        }
+        else {
+            document.write("0~100 사이의 숫자만 입력");
+        }
+    </script>
+</body>
+
+</html>

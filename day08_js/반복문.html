@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // for 반복문
+        for(let i = 1; i <= 5; i++){
+            //반복으로 수행할 코드
+            alert("hi javascript");
+        }
+
+        let j = 1;  //반복횟수를 저장할 변수
+
+        //while 반복문
+        while(j < 4){   //3번 반복
+            alert("안녕");
+            j++;
+        }
+            */
+
+        //while 반복문2
+        //prompt로 이름 입력받기
+        //입력된 이름이 stop이면 종료
+
+        //변수사용으로
+        /*
+        let result = true;
+        while(result){
+            let name = prompt("이름을 입력하세요;")
+            if(name == "stop"){
+                result = false;
+            }
+            alert(name);
+        }
+        */
+
+        //변수사용x
+        while(true){
+            let name = prompt("이름을 입력하세요.");
+            if(name == "stop"){
+                break;
+            }
+            alert(name);
+        }
+    </script>
+</body>
+</html>

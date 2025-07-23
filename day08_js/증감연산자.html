@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //증감연산자 ++(변수의 값을 1 증가), --(변수의 값을 1감소)
+
+        let a = 5;
+        let b = 5;
+        let result = a++;
+        let result2 = ++b;
+
+        console.log(a);
+        console.log(b);
+
+        console.log(result);
+        console.log(result2);
+
+        let c = 10;
+        let d = 10;
+        let result3 = c--;  //연산의 결과가 감소하기 전의 값을 반환
+        let result4 = --c;  //연산의 결과가 감소한 후의 값을 반환
+
+        console.log(c);
+        console.log(d);
+
+        console.log(result3);
+        console.log(result4);
+        
+        //문제
+        let x = 5;
+        let y = ++x;   //6
+        let z = ++y + x;  //7 + 6 -> z = 13
+        console.log(x);
+        console.log(z);
+        console.log(y);
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //메뉴 선택시 다른 코드 수행하기
+
+        let menu;
+        menu = parseInt(prompt("메뉴를 선택하세요 : ")); 
+        //prompt창에서 입력한 모든 값은 문자열로 인식함 
+        //숫자1만 입력할 경우 밑에 case문이 실행되지 않음-> 문자열로 인식하기 때문에
+        //parseInt(); -> 정수형숫자로 변화해 주는 함수
+
+        switch (menu) {
+            case 1:
+                alert("입력합니다");
+                break;
+            case 2:
+                alert("조회입니다.");
+                break;
+            case 3:
+                alert("변경합니다.");
+                break;
+            case 4:
+                alert("삭제합니다.");
+                break;
+            default:
+                alert("잘못된 메뉴 선택입니다.");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //콘솔에 표시
+        /*
+        for (let i = 2; i < 6; i++) {
+            console.log(i + "단\n");
+            for(let j = 1; j < 10; j++){
+                console.log(i + " x " + j + " = " + (i*j) + "\n");
+            }
+        }
+        */
+
+        //html에 표시
+        for(let i = 2; i < 6; i++){
+            document.write(i + "단" + "<br>");
+            for(let j = 1; j < 10; j++){
+                document.write(i + " x " + j + " = " + (i * j) + "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

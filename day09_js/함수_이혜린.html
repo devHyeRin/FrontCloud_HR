@@ -13,11 +13,12 @@
             margin: 0 auto;
             font-size: 17px;
             font-weight: 500;
+            text-align: center;
         }
 
         .row1 {
             border-bottom: 1px solid black;
-            text-align: center;
+            
         }
 
         ul {
@@ -47,8 +48,8 @@
             margin-bottom: 20px;
         }
 
-        p {
-            text-align: center;
+        p { 
+            margin-bottom: 0;
         }
 
         .row2_result {
@@ -90,51 +91,47 @@
     </div>
 
     <script>
-        let result = 0;
         function sum(num1, num2) {
-            result = parseInt(num1 + num2);
-            return result;
+            return parseInt(num1) + parseInt(num2);
         }
         function minus(num1, num2) {
-            result = parseInt(num1 - num2);
-            return result;
+            return parseInt(num1) - parseInt(num2);
         }
         function mul(num1, num2) {
-            result = parseInt(num1 * num2);
-            return result;
+            return parseInt(num1) * parseInt(num2);
         }
         function div(num1, num2) {
-            result = parseInt(num1 / num2);
-            return result;
+            return parseInt(num1) / parseInt(num2);
         }
 
         function showCal() {
             let number1 = document.getElementById("number1").value;
-
             let number2 = document.getElementById("number2").value;
-
             let calculate = document.getElementById("calculate").value.trim();
-
             let result2 = 0;
 
-            if (calculateValue == "+") {
-                result2 = sum(number1, number2);
-            }
-            else if (calculateValue == "-") {
-                result2 = minus(number1, number2);
-            }
-            else if (calculateValue == "*") {
-                result2 = mul(number1, number2);
-            }
-            else if (calculateValue == "/") {
-                result2 = div(number1, number2);
-            }
-            else {
-                alert("잘못된 입력입니다.");
+            switch (calculate) {
+                case "+":
+                    result2 = sum(number1, number2);
+                    break;
+                case "-":
+                    result2 = minus(number1, number2);
+                    break;
+                case "*":
+                    result2 = mul(number1, number2);
+                    break;
+                case "/":
+                    result2 = div(number1, number2);
+                    break;
+                default:
+                    alert("잘못된 입력입니다.");
             }
 
             let showResult = document.getElementById("showResult");
-            showResult.innerHTML = "숫자 1 : " + number1 + "<br>" + "숫자 2 : " + number2 + "<br>" + "결과값 : " + result2;
+            showResult.innerHTML = 
+                "숫자 1 : " + number1 + "<br>" +
+                "숫자 2 : " + number2 + "<br>" +
+                "결과값 : " + result2;
 
         }
     </script>

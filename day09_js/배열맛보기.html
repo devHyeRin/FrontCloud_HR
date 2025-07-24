@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //변수 3개와 같은 역할을 함
+        //배열 선언 및 초기화
+        let foods = ["탕수육", "복숭아", "아이스티"];
+
+
+        let arr2 = new Array(3);
+
+        //배열의 값 가져오기
+        //배열의 요소 == 변수와 같다(배열의 요소는 변수와 동일)
+        //배열명을 기준으로으로 해서 index로 접근한다.
+        //index값은 0부터 시작한다
+        let food1 = foods[0];
+        let food2 = foods[1];
+        let food3 = foods[2];
+
+        console.log(food1);
+        console.log(food2);
+        console.log(foods[2]);
+
+        let a, b, c, d, e;
+
+        a = "딸기";
+        b = "복수아";
+        c = "수박";
+        d = "자두";
+        f = "참외";
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(f);
+
+        //배열로 바꾸기
+        let fruits = new Array(5);
+        fruits[0] = "수박";
+        fruits[1] = "딸기";
+        fruits[2] = "자두";
+        fruits[3] = "사과";
+        fruits[4] = "배";
+
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+        console.log(fruits[3]);
+        console.log(fruits[4]);
+
+        console.log("==============");
+        //배열 출력 -> 반복문 사용
+        //배열의 첨자 index에 변수 사용
+        for (let i = 0; i < 5; i++) {
+            console.log(fruits[i]);
+        }
+
+        console.log("==============");
+        let num = new Array(5);
+
+        for (let i = 0; i < num.length; i++) {
+            num[i] = i + 1;
+            console.log(num[i]);
+        }
+        
+
+
+
+    </script>
+</body>
+
+</html>

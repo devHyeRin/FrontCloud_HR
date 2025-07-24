@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            border: 1px solid black;
+            width: 400px;
+            height: 450px;
+            margin: 0 auto;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .row1 {
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+        }
+
+        input {
+            padding: 7px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: rgb(230, 159, 159);
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .row2_result {
+            border: 1px solid black;
+            width: 350px;
+            height: 125px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!--입력 부분-->
+        <div class="row1">
+            <ul>
+                <li>
+                    <label for="number1">숫자 1 입력</label>
+                    <input type="number" id="number1">
+                </li>
+                <li>
+                    <label for="number2">숫자 2 입력</label>
+                    <input type="number" id="number2">
+                </li>
+                <li>
+                    <label for="calculate">연산자 입력</label>
+                    <input type="text" id="calculate" placeholder="+, -, *, / 만 입력 가능">
+                </li>
+                <li>
+                    <button onclick="showCal()">계산하기</button>
+                </li>
+            </ul>
+        </div>
+        <!--결과 부분-->
+        <div class="row2">
+            <p>결과</p>
+            <div class="row2_result" id="showResult"></div>
+        </div>
+    </div>
+
+    <script>
+        let result = 0;
+        function sum(num1, num2) {
+            result = parseInt(num1 + num2);
+            return result;
+        }
+        function minus(num1, num2) {
+            result = parseInt(num1 - num2);
+            return result;
+        }
+        function mul(num1, num2) {
+            result = parseInt(num1 * num2);
+            return result;
+        }
+        function div(num1, num2) {
+            result = parseInt(num1 / num2);
+            return result;
+        }
+
+        function showCal() {
+            let number1 = document.getElementById("number1").value;
+
+            let number2 = document.getElementById("number2").value;
+
+            let calculate = document.getElementById("calculate").value.trim();
+
+            let result2 = 0;
+
+            if (calculateValue == "+") {
+                result2 = sum(number1, number2);
+            }
+            else if (calculateValue == "-") {
+                result2 = minus(number1, number2);
+            }
+            else if (calculateValue == "*") {
+                result2 = mul(number1, number2);
+            }
+            else if (calculateValue == "/") {
+                result2 = div(number1, number2);
+            }
+            else {
+                alert("잘못된 입력입니다.");
+            }
+
+            let showResult = document.getElementById("showResult");
+            showResult.innerHTML = "숫자 1 : " + number1 + "<br>" + "숫자 2 : " + number2 + "<br>" + "결과값 : " + result2;
+
+        }
+    </script>
+</body>
+
+</html>

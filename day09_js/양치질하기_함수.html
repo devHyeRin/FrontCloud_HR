@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수 만들기
+        function 양치질하기() {
+            document.write("치약을 짠다 <br>");
+            document.write("양치질을 한다 <br>");
+            document.write("헹구기 <br>");
+        }
+        //함수 만들고 호출하지 않으면 실행되지 않는다.
+
+        양치질하기();
+
+        //함수
+        //입력(매개변수) : 함수와 외부와의 매개자역할 하는 함수
+        //반환 : 함수가 내부에서 만든 결과를 주는 것
+        function 양치질하기ver2(cnt){   //춧 -> 매개변수
+            document.write("치약을 짠다 <br>");
+            document.write("양치질을 한다 <br>");
+            document.write("헹구기 <br>");
+
+            양치질하기ver2(2);
+            양치질하기ver2(4);
+            양치질하기ver2(2);
+        }
+    </script>
+</body>
+
+</html>

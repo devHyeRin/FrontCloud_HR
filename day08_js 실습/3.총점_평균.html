@@ -13,12 +13,12 @@
         let engScore = parseInt(prompt("영어 점수를 입력해주세요."));
         let matScore = parseInt(prompt("수학 점수를 입력해주세요."));
         let totalScore = parseInt(korScore + engScore + matScore);
-        let evScore = parseFloat(totalScore/3).toFixed(3);
+        let avScore = parseFloat(totalScore/3).toFixed(3);
 
-        console.log("이름 : " + name);
-        console.log("국어 : " + korScore + " 영어 : " + engScore + " 수학 : " +  matScore);
-        console.log("총점 : " + totalScore);
-        console.log("평균 : " + evScore);
+        document.write("이름 : " + name + "<br>");
+        document.write("국어 : " + korScore + " 영어 : " + engScore + " 수학 : " +  matScore + "<br>");
+        document.write("총점 : " + totalScore + "<br>");
+        document.write("평균 : " + avScore);
     </script>
 </body>
 </html>

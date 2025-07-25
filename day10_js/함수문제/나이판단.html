@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //나이판단 함수
+        function ageGuess(age) {
+            let adult = true;
+
+            if (age >= 20) {
+                return adult;
+            }
+            else {
+                adult = false;
+                return adult;
+            }
+        }
+
+        //결과 출력
+        let ageInput = parseInt(prompt("나이 입력"));
+        if (ageInput < 0) {
+            alert("0 이하는 입력할 수 없습니다.");
+        }
+        else {
+            let result = ageGuess(ageInput);
+            document.write("<h3>성인 판단 함수</h3>");
+            document.write("입력 나이 : " + ageInput + "세<br>");
+            document.write("결과 : " + result);
+        }
+
+    </script>
+</body>
+
+</html>

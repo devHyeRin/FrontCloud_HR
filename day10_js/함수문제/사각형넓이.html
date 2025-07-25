@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //사각형 넓이 구하는 함수
+        function square(W, H) {
+            return W * H;
+        }
+
+        //결과 출력
+        let width = parseInt(prompt("사각형 가로 입력"));
+        let height = parseInt(prompt("사각형 세로 입력"));
+        let result = square(width, height);
+
+        document.write("<h3>사각형 넓이 구하는 함수</h3>");
+        document.write("가로 길이 : " + width + "cm<br>");
+        document.write("세로 길이 : " + height + "cm<br>");
+        document.write("사격형 넓이 : " + result + "cm²");
+
+    </script>
+</body>
+
+</html>

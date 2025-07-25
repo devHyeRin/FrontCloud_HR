@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //별찍기 함수
+        function star(Row, Column) {
+            for (let i = 0; i < Row; i++) {
+                for (let j = 0; j < Column; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+
+        //결과 출력
+        let row = parseInt(prompt("별 출력(행)"));
+        let column = parseInt(prompt("별 출력(열)"));
+
+        document.write("<h3>입력한 수만큼 별찍기 함수</h3>");
+        document.write("별(행 입력 숫자) : " + row + "<br>");
+        document.write("별(열 입력 숫자) : " + column + "<br><br>");
+        star(row, column);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //입력x, 반환x -> undefined 출력됨
+        function funcA() {
+            alert("hi function !!");
+        }
+        //함수호출
+        //funcA();
+
+        //입력o, 반환x
+        function funcB(cnt) {
+            for (let i = 1; i <= cnt; i++) {
+                alert("hi!");
+            }
+        }
+        // funcB(2);
+
+        //입력o, 반환o
+        //기능 : 매개변수로 전달된 두 수를 더하는 기능
+        function adder(su1, su2) {
+            let sum = su1 + su2;
+            return sum;
+        }
+        let result = adder(2, 3);
+        // alert(result);
+
+        //위치정보 반환함수
+        //입력o, 반환o
+        function 위치가져오기() {
+            let 위도 = 352.4222;
+            let 경도 = 125523.4222;
+
+            // return 위도, 경도;   2개를 반환할 수 없음 -> 배열, 객체 사용
+
+            //배열, 객체 반환 방법
+            let 위치 = { 위도: 위도, rudeh: 152232.422 };
+            return 위치;
+        }
+        let result위치 = 위치가져오기();
+        console.log(result위치);
+
+        //로또번호 제공하기
+        //입력x, 반환o
+        function 로또번호가져오기() {
+            let a = 7, b = 44, c = 11, d = 9, e = 8, f = 4;
+
+            // let lottos = [7, 44, 11, 9, 8, 4];
+            let lottos = new Array(6);
+            lottos[0] = a;
+            lottos[1] = b;
+            lottos[2] = c;
+            lottos[3] = d;
+            lottos[4] = e;
+            lottos[5] = f;
+            return lottos;
+        }
+        let resultArr = 로또번호가져오기();
+        console.log(resultArr);
+
+
+
+
+        //객체 맛보기
+        let snackName = "맛동산";
+        let snack = {
+            name: "맛동산",
+            price: 2800,
+            weight: "100g",
+            maker: "해태"
+        };
+        //객체 출력
+        console.log(snack.name);
+        console.log(snack.price);
+        console.log(snack.maker);
+    </script>
+</body>
+
+</html>

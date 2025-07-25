@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //두수의 합 구하는 함수
+        function numberSum(num1, num2) {
+            return num1 + num2;
+        }
+
+        //결과 출력
+        let number1 = parseInt(prompt("숫자1 입력"));
+        let number2 = parseInt(prompt("숫자2 입력"));
+        let result = numberSum(number1, number2);
+
+        document.write("<h3>두 수의 합 구하는 함수</h3>");
+        document.write("숫자 1 : " + number1 + "<br>");
+        document.write("숫자 2 : " + number2 + "<br>");
+        document.write("더하기 결과 : " + result);
+    </script>
+</body>
+
+</html>

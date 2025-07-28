@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문제1 : 배열(1차원, 2차원, 3차원 배열)을 반환하는 함수 만들기
+        //문제2 : 매개변수로 입력받아서 1차원 배열, 2차원배열, 3차원배열의 내용을 반환하는 함수
+        function studentScore(st) {
+            let sum = 0, avg = 0;
+
+            for (let i = 0; i < st.length; i++) {
+                sum += st[i];
+            }
+            avg = sum / st.length;
+
+            let student = [sum, avg];
+            return student;
+        }
+
+        let mat = parseInt(prompt("수학점수"));
+        let eng = parseInt(prompt("영어점수"));
+        let kor = parseInt(prompt("국어점수"));
+        let input = [mat, eng, kor];
+
+        let sub = studentScore(input);
+
+        for (let i = 0; i < sub.length; i++) {
+            console.log(sub[i]);
+        }
+        
+    </script>
+</body>
+</html>

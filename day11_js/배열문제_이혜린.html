@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1번문제
+        const fruit = ["apple", "banana", "cherry"];
+
+        console.log("---1번문제---");
+        console.log("첫번째 요소 : " + fruit[0]);
+        console.log("첫번째 요소 : " + fruit[2]);
+
+
+
+        //2번문제
+        const color = ["red", "blue", "green", "yellow"];
+
+        console.log("---2번문제---");
+        console.log("배열의 길이 : " + color.length);
+
+
+
+        //3번문제
+        const score = [10, 20, 30, 40];
+        let sum = 0;
+
+        for (let i = 0; i < score.length; i++) {
+            sum += score[i];
+        }
+
+        console.log("---3번문제---");
+        console.log("배열 점수의 합 : " + sum);
+
+
+
+        //4번문제
+        const name = ["영숙", "순자", "영자", "옥순", "현숙"];
+
+        console.log("---4번문제---");
+        for (let i = 0; i < name.length; i++) {
+            console.log("name[" + i + "] = " + name[i]);
+        }
+
+
+
+        //5번문제
+        const numbers = [7, 4, 6, 8, 10];
+        let result;    //true, false
+
+        console.log("---5번문제---");
+        for (let i = 0; i < numbers.length; i++) {
+            console.log("numbers[" + i + "] = " + numbers[i]);
+
+            if (numbers[i] === 7) {
+                result = true;
+            }
+        }
+        if (result == true) {
+            console.log("배열에 숫자 7이 있습니다.");
+        }
+        else {
+            console.log("배열에 숫자 7이 없습니다.");
+        }
+
+
+
+        //6번문제
+        const numbers2 = [12, 41, 6, 18, 10];
+        let max = numbers2[0];
+
+        for (let i = 0; i < numbers2.length; i++) {
+            if (max < numbers2[i]) {
+                max = numbers2[i];
+            }
+        }
+
+        console.log("---6번문제---");
+        console.log("배열에서 가장 큰 수 : " + max);
+
+
+
+        //7번문제
+        const kors = [90, 80, 70, 99, 100];
+        let sum2 = 0;
+        let avg = 0;
+
+        for (let i = 0; i < kors.length; i++) {
+            sum2 += kors[i];
+        }
+        avg = sum2 / kors.length;
+
+        console.log("---7번문제---");
+        console.log("총점 : " + sum2 + " / 평균 : " + avg);
+
+
+
+        //8번문제 (7번문제 활용)
+        let count = 0;
+        let high = "";
+
+        for (let i = 0; i < kors.length; i++) {
+            if (avg < kors[i]) {
+                count++;
+                high += kors[i] + " ";
+            }
+        }
+        console.log("---8번문제---");
+        console.log("평균 : " + avg);
+        console.log("평균보다 높은 점수 : " + high);
+        console.log(count + "개");
+
+
+
+        //9번문제
+        const prices = [1000, 1500, 900, 1800, 2000, 1200];
+        let pricesNew = [];
+
+        //새로운 배열 저장
+        for (let i = 0; i < prices.length; i++) {
+            if (prices[i] > 1200) {
+                pricesNew.push(prices[i]);
+            }
+        }
+        //새로운 배열 출력
+        console.log("---9번문제---");
+        for (let i = 0; i < pricesNew.length; i++) {
+            console.log(pricesNew[i]);
+        }
+
+
+
+
+        //10번문제
+        const number = [1, 2, 3, 4, 5];
+        let dobleNum = [];
+
+        //새로운 배열 저장
+        for (let i = 0; i < number.length; i++) {
+            dobleNum.push(number[i] * 2);
+        }
+        //새로운 배열 출력
+        console.log("---10번문제---");
+        for (let i = 0; i < dobleNum.length; i++) {
+            console.log(dobleNum[i]);
+        }
+
+
+
+        //11번문제
+        let fruits = ["자두", "복숭아", "포도"];
+        let result2;   //true, false
+
+        console.log("---11번문제---");
+        for (let i = 0; i < fruits.length; i++) {
+            console.log("fruits[" + i + "] = " + fruits[i]);
+            if (fruits[i] === "자두") {
+                result2 = true;
+            }
+        }
+        if (result2 == true) {
+            console.log("배열에 자두가 있습니다.");
+        }
+        else {
+            console.log("배열에 자두가 없습니다.");
+        }
+
+
+
+        //12번문제
+        console.log("---12번문제---");
+        for (let i = fruits.length - 1; i >= 0; i--) {
+            console.log("fruits[" + i + "] = " + fruits[i]);
+        }
+
+
+
+
+        //13번문제
+        let fruitsNew = [];
+        for (let i = fruits.length - 1; i >= 0; i--) {
+            fruitsNew.push(fruits[i]);
+        }
+
+        console.log("---13번문제---");
+        for (let i = 0; i < fruitsNew.length; i++) {
+            console.log("fruitsNew[" + i + "] = " + fruitsNew[i]);
+        }
+
+
+    </script>
+</body>
+
+</html>

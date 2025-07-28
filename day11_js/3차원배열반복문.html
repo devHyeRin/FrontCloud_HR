@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let lottoYear = [
+            //0면
+            [
+                [1, 13, 21, 25, 28, 31],    //0행
+                [8, 10, 14, 20, 33, 41],    //1행
+                [6, 12, 18, 37, 40, 41]     //2행
+            ],
+            //1면
+            lottoMonth6 = [
+                [2, 1, 22, 24, 27, 30],    //0행
+                [8, 10, 14, 20, 33, 41],    //1행
+                [6, 12, 18, 37, 40, 41]     //2행
+            ]
+        ];
+
+        //3차원 배열 : 2차원배열을 요소로 가지는 배열
+        //배열명을 기준으로 면, 행, 열로 접근
+        console.log(lottoYear[0][1][0]);
+
+        for (let k = 0; k < 2; k++) {
+            //2차원 배열
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 6; j++) {
+                    console.log(lottoYear[k][i][j]);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

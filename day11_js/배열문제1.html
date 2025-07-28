@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //국어점수 5개 총점과 평균 구하기
+        let scores = [90, 80, 77, 100, 89];
+
+        // 선생님
+        //반복문x
+        let sum = scores[0] + scores[1] + scores[2] + scores[3] + scores[4];
+        console.log(sum);
+
+        let avg;
+        avg = sum / 5;
+        console.log(avg);
+
+        //합계 반복문
+        let total = 0;
+        //total 변수에 각 학생의 점수 누적하기
+        //누적할 때 변수의 초기화가 중요함
+        for (let i = 0; i < scores.length; i++) {
+            total = total + scores[i];
+        }
+        console.log(total);
+        let avg2 = total / 5;
+        console.log(avg2);
+
+
+        // 누적 합계
+        let arr = [10, 20, 30];
+        let arrTotal = 0;  // 재할당 0으로 
+        for (let i = 0; i < arr.length; i++) {
+            arrTotal = arrTotal + arr[2];  // 
+            console.log(arrTotal);
+        }
+
+        console.log(arrTotal);
+
+
+        //
+        let arr2 = [10, 20, 30, 40, 50, 60];
+        let arr2Total = 0;
+
+        /*
+        arr2Total+=arr2[0];
+        console.log(arr2Total);
+
+        arr2Total+=arr2[1];
+        console.log(arr2Total);
+
+        arr2Total+=arr2[2];
+        console.log(arr2Total);
+        */
+
+        for (let i = 0; i < arr2.length; i++) {
+            arr2Total += arr2[i];
+            console.log(arr2Total);
+        }
+        console.log(arr2Total);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

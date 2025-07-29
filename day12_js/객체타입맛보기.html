@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //과자정보
+        let snackName = "맛동산";
+
+        //과자정보 - 여러개의 속성으로 이루어져있다
+        //과자이름, 제조사, 무게, 가격, 유통기한, 제조일자
+
+        let snack = {
+            name: "맛동산",
+            maker: "해태",
+            weight: 200,
+            price: 3500
+        };
+
+
+        //과자정보, 변경, 출력
+        //객체 출력 방법 두가지
+        console.log(snack.name);
+        console.log(snack["name"]); //문자열 대신에 변수도 사용가능
+
+        console.log(snack.price);
+        console.log(snack["price"]);
+        
+        console.log(snack.weight);
+        console.log(snack["maker"]);    //snack[maker] -> 이거는 틀림(maker라는 변수가 없어서)
+
+
+        //객체 정보 변경
+        snack.price = 2800;
+        console.log(snack.price);
+        console.log(snack["price"]);
+
+    </script>
+</body>
+
+</html>

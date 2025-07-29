@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //객체 : 속성 + 기능
+        //객체의 메서드에서 속성 값을 사용하려면 this 키워드 사용
+        //his:객체 자기자신을 가리키는 키워드
+        let snack = {
+            name: "맛동산",
+            price: 3500,
+            maker: "해태",
+
+            showInfo: function(){
+                // alert("실행돼?");
+                // alert(this.name + "^^")
+                // alert(`${this.name} ^^`)
+                alert(`${this.name} ${this.price} ^^`);
+            }
+        };
+
+        snack.showInfo();
+
+    </script>
+</body>
+
+</html>

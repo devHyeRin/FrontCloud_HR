@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ramen = {
+            name:"신라면",
+            manufacturer:"농심",
+            flavor:"매운맛",
+            price:1200,
+            calories:500,
+            weight:"120g",
+            package:"봉지",
+
+            describe: function(){
+                console.log(`${this.name}은 ${this.manufacturer}에서 만든 ${this.flavor} 라면 입니다.`);
+            },
+
+            info: function(){
+                console.log(`이 라면은 ${this.weight}이고, 칼로리는 ${this.calories}이며, 가격은 ${this.price}원입니다.`);
+            },
+
+            cook: function(){
+                console.log(`${this.name}을 끓이는 중..`);
+            }
+        }
+
+        let cupRamen = {
+            name:"육개장",
+            manufacturer:"농심",
+            flavor:"순한맛",
+            price:1100,
+            package:"컵",
+
+            describe: function(){
+                console.log(`${this.name}은 ${this.manufacturer}에서 만든 ${this.flavor} 라면 입니다.`);
+            },
+
+            info: function(){
+                console.log(`이 라면은 칼로리는 정보 없음이며, 가격은 ${this.price}원입니다.`);
+            },
+
+            cook: function(){
+                console.log(`${this.name}을 끓이는 중..`);
+            }
+
+        };
+        
+        let ramenList = [ramen, cupRamen];
+
+        function userChoice(ramenObj){      //선택된 라면 객체를 매개변수로 받기
+            ramenObj.cook();
+
+            let choice = confirm(`${ramenObj.name}에 대한 정보를 더 원하시나요?`);
+            if(choice){
+                ramenObj.describe();
+                ramenObj.info();
+            }
+        }
+
+
+        let input = prompt("신라면과 육개장라면 중에 선택하세요.");
+        if(input === "신라면"){
+            userChoice(ramenList[0]);
+        }
+        else if(input === "육개장라면"){
+            userChoice(ramenList[1]);
+        }
+        else{
+            alert("잘못 입력하셨습니다.");
+        }
+    </script>
+</body>
+</html>

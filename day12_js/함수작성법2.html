@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수표현식
+        //변수에 저장하고 사용하는 문법
+        //호이스팅 되지 않음 (함수선언 후 호출해야 함)
+
+        // hi();     불가능 x, 함수 선언 후 호출   
+
+        let hi = function () {
+            alert("hi^^ 나는 함수 표현식 방법");
+        };
+
+        // hi(); 가능 o
+
+        let hap10 = function () {
+            let sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                sum += i;
+            }
+            alert(sum);
+        };
+
+        hap10();
+
+        let hap10Ver2 = function () {
+            let sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+        let result = hap10Ver2();
+        if (result === 55) {
+            alert("굿잡");
+        }
+    </script>
+</body>
+
+</html>

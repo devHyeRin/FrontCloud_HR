@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let turtle = {
+            name: "심청이",
+            species: "페닐슐라쿠터",
+            age: 5,
+            color: "초록색",
+            weight: "800g",
+            likesFood: "건새우",
+
+            printInfo: function () {    //함수 이름 : printInfo
+                // alert("hi");
+                // alert(this.name + this.age +"정보 입니다");
+                alert(`${this.name} ${this.age} 입니다`);
+            },
+
+            eat: function (food) {  //함수 이름 : eat
+                if (food === "건새우") {
+                    alert("몸을 흔들면서 좋아함");
+                }
+                else {
+                    alert("그냥 먹음");
+                }
+            }
+        };
+
+        //객체의 메서드(함수)에서 객체의 속성을 접근하려면 this 키워드를 사용해야함
+        //this -> 자기자신을 의미한 값
+        console.log(turtle.name);
+        turtle.printInfo();
+        turtle.eat("거북이사료");
+        turtle.eat("건새우");
+
+    </script>
+</body>
+
+</html>

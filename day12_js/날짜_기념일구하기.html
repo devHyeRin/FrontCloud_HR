@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        //특정날짜를 기준으로 기념일 구하기
+        let date = new Date("2025-07-14");  //6개월 180일 후
+        date.setDate(date.getDate() + 180);
+
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let date2 = date.getDate();
+
+        document.getElementById("result").innerHTML = `년도 ${year} 월 ${month} 일 ${date2}`;
+    </script>
+</body>
+
+</html>

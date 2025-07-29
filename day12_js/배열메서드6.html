@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //이걸 사용하려면 forEach, map 를 알아야 함
+        let arr = [10, 20, 30];
+        let result = arr.reduce(function (acc, item) { return acc + item }, 0);
+        // 끝에 0은 초기값을 의미함
+        console.log(result);    //60
+
+        //화살표 함수로 표현하기
+        let result2 = arr.reduce((acc, item) => acc + item, 0);
+        console.log(result2);   //60
+
+        
+        //위의 코드들을 직접 반복문으로 돌린 코드
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr;
+        }
+        console.log(sum);   //60
+
+
+    </script>
+</body>
+
+</html>

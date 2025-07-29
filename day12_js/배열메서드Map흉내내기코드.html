@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //map을 사용해서 배열에 저장하기
+        let arr = ["김현희", "전희연", "박두식"];
+
+        let newArr = arr.map(function (item) {
+            return item + "님";       //꼭 return 해줘야 함, 아니면 배열이 비어있음
+        });
+
+        console.log(arr);
+        console.log(newArr);
+
+
+        //map 흉내내기(직접 치기)
+        function myMap(callback) {
+            let arr = ["김현희", "전희연", "박두식"];
+            let newArr =[];     //let newArray = new Array(); 둘 중 하나 표현 쓰면 됨
+            for (let i = 0; i < arr.length; i++) {
+                let temp = arr[i];  //배열의 요소를 꺼내기
+                let newTemp =  callback(temp);
+                newArr.push(newTemp);   //새로운 배열에 push로 넣기
+            }
+            return newArr;  //리턴을 꼭 해줘야 함!
+        }
+        
+        //myMap()함수가 리턴값이 있기 때문에 값을 담아줘야함
+        let result = myMap(function(name){ 
+            return name + "님 ^^";
+        });    //매개변수 이름은 아무거나 상관없음
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

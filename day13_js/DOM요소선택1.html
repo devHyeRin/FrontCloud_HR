@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*스타일 적용 버튼을 클릭했을 때 실행 함수*/
+        function change(){
+            // alert("스타일 적용 버튼 클릭");
+            const wrap = document.getElementById("wrap");
+            console.log(wrap);
+
+            //스타일 변경
+            wrap.style.width = "100px";
+            wrap.style.height="100px";
+            wrap.style.lineHeight="100px";
+            wrap.style.backgroundColor="green";
+
+            //태그 안에 내용 바꾸기
+            wrap.innerHTML="내용이 바뀐다";
+        }
+
+        function unChange(){
+            // alert("스타일 취소 버튼 클릭");
+            const wrap = document.getElementById("wrap");
+            console.log(wrap);
+
+            //스타일 취소
+            wrap.style.width = "";
+            wrap.style.height="";
+            wrap.style.lineHeight="";
+            wrap.style.backgroundColor="";
+
+            //태그 안에 내용 바꾸기
+            wrap.innerHTML="내용이 바뀐다^^^^";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM 다루기</h1>
+    <p>
+        웹 문서(웹 페이지)를 자바스크립트에서 사용할 수 있도록 객체형태로 제공함
+    </p>
+    <h2>id로 선택하기</h2>
+    <h2>id가 wrap인 요소를 선택하여 스타일 변경하기</h2>
+
+    <div id="wrap">스타일 적용</div>
+
+    <button onclick="change()">스타일 적용</button>
+    <button onclick="unChange()">스타일 취소</button>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change() {
+            //querySelectorAll는 배열로 반환됨
+            const items = document.querySelectorAll(".item");
+
+            //한 개를 꺼내와야 할 때는 이렇게 쓰기
+            // const items = document.querySelectorAll(".item")[0];
+
+            //반복문으로 스타일 적용
+            /*
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                item.style.backgroundColor = "blue";
+                }
+                */
+
+            //반복문 미사용
+            /*
+            const item1 = items[0];
+            item1.style.backgroundColor = "blue";
+            const item2 = items[1];
+            item2.style.backgroundColor = "blue";
+            */
+
+            //forEach() 사용
+            items.forEach(function (item) {
+                item.style.backgroundColor = "blue";
+            });
+
+            //화살표 함수
+            items.forEach(item => item.style.backgroundColor = "blue");
+        }
+
+        function unChange() {
+            const items = document.querySelectorAll(".item");
+
+            const item1 = items[0];
+            item1.style.backgroundColor = "";
+            const item2 = items[1];
+            item2.style.backgroundColor = "";
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>querySelectorAll로 요소 선택하기</h2>
+    <p>주의사항 : 모두 선택하기 이므로 선택 대상이 한 개여도 배열로 반환됨</p>
+
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+
+    <button onclick="change()">스타일 적용</button>
+    <button onclick="unChange()">스타일 취소</button>
+</body>
+
+</html>

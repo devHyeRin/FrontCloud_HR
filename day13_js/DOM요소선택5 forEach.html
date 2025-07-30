@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcAmount() {
+            // alert("dfdfs");
+            //1. price 클래스 선택하여 금액 가져오기
+            //2. 금액합계
+            //3. 주문금액태그에 합계금액 보여주기
+
+            const prices = document.querySelectorAll(".price");
+
+            //forEach 방법
+            let sum = 0;
+
+            prices.forEach(function (price) {
+                console.log(price); //금액이 하나씩 나오는지 확인하기
+                console.log(price.innerHTML);
+
+                let priceAmount = parseInt(price.innerHTML);
+                sum += priceAmount;
+            });
+
+            console.log(sum);
+
+            //주문금액 html에 넣기
+            const totalAmount = document.querySelector("#totalAmount")
+            totalAmount.innerHTML = sum;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>querySelectorAll 사용하여 주문금액 구하기</h2>
+
+    <div class="price">100</div>
+    <div class="price">150</div>
+    <div class="price">200</div>
+    <div class="price">100</div>
+
+    <!--금액이 밑으로 내려가는게 싫으면 span 태그 사용하기-->
+    주문금액 : <span id="totalAmount"> </span>
+
+    <div>
+        <button onclick="calcAmount()">주문금액</button>
+    </div>
+</body>
+
+</html>

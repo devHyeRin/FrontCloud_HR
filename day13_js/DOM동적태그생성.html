@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addDiv() {
+            //1. 태그생성한ㄷ
+            //2. 부모선택하기
+            //3. 부모의 자식으로 추가하기
+
+            const div = document.createElement("div");  //태그 선택할 때 element 사용
+
+            //내용과 스타일 속성 변경
+            div.innerHTML = "새로생긴 div";
+            div.style.backgroundColor = "blue";
+            div.style.width = "100px";
+
+            //2. 부모선택
+            const wrap = document.getElementById("wrap");
+            //3. 부모의 자식으로 추가하기 -> appendChild()
+            wrap.appendChild(div);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--태그가 추가될 위치-->
+    </div>
+
+    <button onclick="addDiv()">클릭</button>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function toggle() {
+            //선택
+            const pw = document.getElementById("pw")
+            console.log(pw);
+
+            //버튼의 글자 바꾸기
+            const btn = document.getElementById("btn");
+
+            //선택된 input 태그의 type 속성으로 if문 구성
+            if(pw.type === "password"){ //보이게 변경
+                pw.type = "text";
+                btn.innerHTML="안보이기";
+            }
+            else{
+                pw.type="password";
+                btn.innerHTML="보이기";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--input type을 변경해주면 됨-->
+    <input type="password" placeholder="비밀번호 입력하세요" id="pw">
+    <button onclick="toggle()" id="btn">보이기</button> <!--버튼 글씨도 바꿀 수 있음-->
+</body>
+
+</html>

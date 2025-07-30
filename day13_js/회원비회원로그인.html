@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 400px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+
+        .tab-menu {
+            display: flex;
+        }
+
+        .tab-menu>div {
+            border: 1px solid black;
+            width: 50%;
+        }
+
+        .member {
+            border: 1px solid black;
+            height: 200px;
+        }
+
+        .noMember {
+            border: 1px solid black;
+            height: 200px;
+        }
+        .member, .noMember{
+            display: none;
+        }
+    </style>
+    <script>
+        //회원 메뉴 클릭 시 -> 회원 영역 보이기, 비회원 영역 안보이기
+        function showMember() {
+            const member = document.querySelector(".member");
+            const noMember = document.querySelector(".noMember");
+
+            //선택이 잘 되었는지 확인하기
+            console.log(member);
+            console.log(noMember);
+
+            // 이 코드는 js에 스타일을 직접 주는 방법
+            member.style.display = "block";
+            noMember.style.display = "none";
+        }
+
+        function showNoMember() {
+            const member = document.querySelector(".member");
+            const noMember = document.querySelector(".noMember");
+
+            //선택이 잘 되었는지 확인하기
+            console.log(member);
+            console.log(noMember);
+
+            member.style.display = "none";
+            noMember.style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <!--회원이면 회원화면 보이고 비회원이면 비회원 화면 보이기-->
+    <div class="wrap">
+
+        <!--탭 메뉴-->
+        <div class="tab-menu">
+            <div onclick="showMember()">회원</div>
+            <div onclick="showNoMember()">비회원</div>
+        </div>
+
+        <!--회원 로그인-->
+        <!--위에 눌러야만 두개 중 하나만 나오게 설정-->
+        <div class="member" style="display: block;">
+            회원 화면입니다.
+        </div>
+
+        <!--비회원 로그인-->
+        <div class="noMember">
+            비회원 화면입니다.
+        </div>
+    </div>
+</body>
+
+</html>

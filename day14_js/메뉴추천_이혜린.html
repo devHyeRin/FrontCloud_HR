@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 900px;
+            height: 900px;
+            margin: 40px auto;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        h3 {
+            border: 1px solid black;
+            margin: 0;
+            background-color: aliceblue;
+            padding: 20px;
+        }
+
+        .btn-wrap {
+            margin: 40px auto;
+            width: 400px;
+        }
+
+        button {
+            display: block;
+            padding: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            width: 100%;
+            margin: 15px 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:nth-child(1) {
+            background-color: rgb(214, 233, 247);
+        }
+
+        button:nth-child(2) {
+            background-color: rgb(160, 206, 240);
+        }
+
+        button:nth-child(3) {
+            background-color: rgb(113, 188, 241);
+        }
+        .ul-style{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .li-style{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        // ul 동적 태그 생성 함수
+        function createUl() {
+            const menuShow = document.querySelector("#menuShow")
+            console.log(menuShow);
+
+            menuShow.innerHTML = "";
+
+            const ul = document.createElement("ul");
+            ul.classList.add("ul-style");
+            menuShow.appendChild(ul);
+
+            return ul;
+        }
+
+        //한식
+        function koreaFood() {
+            const ul = createUl();
+            const menus = [
+                "비빔밥", "된장찌개", "불고기"
+            ];
+
+            menus.forEach(function(item){
+                const li = document.createElement("li");
+                li.classList.add("li-style");
+                li.textContent = item;
+                ul.appendChild(li);
+                
+            });  
+
+            const closeBtn = document.createElement("button");
+            closeBtn.textContent = "한식 메뉴 닫기";
+            ul.appendChild(closeBtn);
+            
+            
+
+        }
+        //중식
+        function chinaFood() {
+            const ul = createUl();
+        }
+        //일식
+        function japanFood() {
+            const ul = createUl();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <h3>🧑‍🍳오늘의 저녁 메뉴 추천🍳</h2>
+            <div class="btn-wrap">
+                <button onclick="koreaFood()" class="btn">한식</button>
+                <button onclick="chinaFood()" class="btn">중식</button>
+                <button onclick="japanFood()" class="btn">일식</button>
+            </div>
+            <!--메뉴 추천 나오는 부분-->
+            <!--ul, li 동적 태그 사용-->
+            <div id="menuShow">
+
+            </div>
+    </div>
+</body>
+
+</html>

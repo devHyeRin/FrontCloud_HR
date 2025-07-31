@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(228, 228, 228);
+            position: relative;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .fruitInput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        #showInput {
+            width: 90%;
+            height: 60%;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            background-color: rgb(192, 192, 192);
+        }
+
+        input {
+            height: 30px;
+            width: 200px;
+            border: none;
+            padding: 5px;
+            border-radius: 10px 0 0 10px;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(175, 175, 175, 0.5);
+
+            color: #333;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 17px;
+            padding: 7px;
+            border: none;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(236, 136, 136);
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        li {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 17px;
+        }
+    </style>
+    <script>
+        function save() {
+            const fruitInput = document.querySelector("#fruitInput");
+            const showInput = document.querySelector("#showInput");
+            const fruit = fruitInput.value;
+
+            if (fruit !== "") {
+                let ul = showInput.querySelector("ul");
+                if (ul == null) {
+                    ul = document.createElement("ul");
+                    showInput.appendChild(ul);
+                }
+
+                const li = document.createElement("li");
+                li.textContent = fruit;
+                ul.appendChild(li);
+
+                fruitInput.value = "";
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <h3>🍇좋아하는 과일🍇</h3>
+        <div class="fruitInput">
+            <input type="text" placeholder="과일을 입력해주세요" id="fruitInput">
+            <button onclick="save()">저장</button>
+        </div>
+        <div id="showInput"></div>
+    </div>
+</body>
+
+</html>

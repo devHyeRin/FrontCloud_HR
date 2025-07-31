@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addImg() {
+            const imgTag = document.createElement("img");
+            imgTag.src = "https://marketplace.canva.com/dlp6Q/MAEEXudlp6Q/1/tl/canva-baby-cat-MAEEXudlp6Q.jpg";
+            imgTag.alt = "고양이 사진";
+            imgTag.style.width = "100px";
+            imgTag.style.height = "100px";
+
+            const wrap = document.getElementById("wrap");
+
+            wrap.appendChild(imgTag)
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="addImg()">이미지 태그 생성</button>
+    <!--부모영역으로 정하기-->
+    <div id="wrap"></div>
+</body>
+
+</html>

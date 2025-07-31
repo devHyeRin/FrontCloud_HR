@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <ul id="price-list">
+        <li class="price">1000</li>
+        <li class="price">2000</li>
+        <li class="price">500</li>
+        <li class="price">3000</li>
+    </ul>
+
+
+    <script> 
+
+        const list = document.querySelectorAll("#price-list .price");
+        const total = Array.from(list)
+            .map(el => parseInt(el.innerText))   
+            .reduce((sum, price) => sum + price, 0);
+
+        console.log("총합:", total.toLocaleString() + "원");
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lottoball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            display: inline-block;
+            background-color: aqua;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+    <script>
+        /*
+        1. 로또번호 만들기(가져오기)
+        2. 로또공 6개 띄우기
+            - 반복
+                공만들기(div)
+                스타일 추가하기
+                로또번호 넣기
+                배경색 가져오기
+                부모 아래에 추가하기
+        */
+        //로또 공 만들기
+        function createLotto() {
+            //1.
+            const lottoNumbers = getLottoNumbers3();
+            console.log(lottoNumbers);
+
+            //2-3.부모 선택하기
+            //로또 공이 나올 부모영역 선택하기
+            const wrap = document.getElementById("wrap");
+
+            //4.부모영역 초기화 : 이걸 안하면 계속 로또공이 만들어짐
+            // (공은 더이상 안만들어지고 숫자만 바뀌어야 함)
+            wrap.innerHTML = "";
+
+            //2. i 변수 => 반복 6번, lottoNumbers 배열의 index 사용함
+            for (let i = 0; i < lottoNumbers.length; i++) {
+                //2-1. 공만들기 (div태그)
+                const ball = document.createElement("div");
+                //2-5.화면에 랜덤 숫자 표시하기
+                ball.innerHTML = lottoNumbers[i];
+                //2-2. 공 스타일 주기(추가)
+                ball.classList.add("lottoball");
+                //3. 랜덤 색깔 가져오기
+                ball.style.backgroundColor=getRandomColor2();
+                //2-4.부모에 공 div 추가하기
+                wrap.appendChild(ball);
+            }
+        }
+
+        //로또번호 가져오기
+        function getLottoNumbers3() {
+            const lottoNumbers = [];
+            while (lottoNumbers.length < 6) {
+                const random = Math.floor(Math.random() * 45) + 1;
+                if (!lottoNumbers.includes(random)) { //없으면 
+                    const result3 = lottoNumbers.push(random);
+                }
+            }
+            return lottoNumbers;
+        }
+
+        //랜덤 컬러 가져오기
+        function getRandomColor2() {
+            const colors = [
+                "red", "blue", "green", "yellow", "purple", "orange",
+                "pink", "brown", "cyan", "magenta", "lime", "teal",
+                "navy", "gold", "coral", "salmon", "beige", "khaki",
+                "olive", "maroon", "turquoise", "lavender", "violet"
+            ];
+            const randomIndex = Math.floor(Math.random() * colors.length);   // 0~ 배열의크기 전까지의 임의의 수 
+            return colors[randomIndex];
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="createLotto()">로또만들기</button>
+    <!--부모 부분-->
+    <div id="wrap"></div>
+</body>
+
+</html>

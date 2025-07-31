@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getMovie1(){
+            //부모 선택
+            const movie = document.getElementById("movie");
+            //자식 선택 -> firstElementChild : 부모의 첫번째 자식 선택
+            const p1 = movie.firstElementChild;
+            alert(p1.innerHTML);    //alert(p1.textContent);
+        }
+
+        function getMovie2(){
+            const movie = document.getElementById("movie");
+            //두번째 자식으로 바로 찾을 수가 없음
+            //첫번째 자식 찾고 -> 형제 찾기
+            const first = movie.firstElementChild;
+            const second = first.nextElementSibling;
+
+            alert(second.innerHTML);
+        }
+
+        function getMovie3(){
+            const movie = document.getElementById("movie");
+            //두번째 자식으로 바로 찾을 수가 없음
+            //첫번째 자식 찾고 -> 형제 찾기 (next를 한번 더 함)
+            //or 마지막 자식 -> lastElementChild
+            /*
+            const first = movie.firstElementChild;
+            const second = first.nextElementSibling;
+            const third = second.nextElementSibling;
+            alert(third.innerHTML);
+            */
+
+            const lastE = movie.lastElementChild;
+            alert(lastE.innerHTML);
+        }
+
+        //부모 찾기
+        function getParent(){
+            const speed = document.getElementById("speed");
+            const movie = speed.parentElement;
+            console.log(movie);
+        }
+    </script>
+</head>
+<body>
+    <h2>div 태그의 자식 요소 선택</h2>
+
+    <div id="movie">    <!--movie : 부모-->
+        <p>아바타</p>    <!--첫번째 자식-->
+        <p id="speed">스피드</p>
+        <p>매트릭스</p>
+    </div>
+
+    <button onclick="getMovie1()">첫 번째 영화</button>
+    <button onclick="getMovie2()">두 번째 영화</button>
+    <button onclick="getMovie3()">세 번째 영화</button>
+    <button onclick="getParent()">스피드 태그의 부모 얻어오기</button>
+</body>
+</html>

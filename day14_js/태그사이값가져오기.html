@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ex1">
+        <!--span 태그 안의 값을 가져오기-->
+        <span>나는 div안의 span</span>
+    </div>
+
+    <script>
+        //선택
+        const ex1 = document.getElementById("ex1");
+
+        //
+        const content1 = ex1.innerHTML;
+        const content2 = ex1.textContent;
+
+        alert(content1);    //div와 div 사이의 내용을 가져옴(html구조와 함께 가져옴)
+        alert(content2);    //내용만 가져옴
+
+        
+    </script>
+</body>
+</html>

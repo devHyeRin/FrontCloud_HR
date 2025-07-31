@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="ex1">
+         <span style="display: none;"> 숨겨있당</span> 하이
+    </div>
+
+
+
+    <script>
+
+        const ex1 = document.getElementById("ex1");
+
+            alert(ex1.innerText);   // 사용자 눈에 보이는 것만
+            alert(ex1.textContent); // 내용전부
+            alert(ex1.innerHTML);   // html구조와 함께 모두
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style1{
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            
+
+        }
+    </style>
+    <script>
+        function addATag(){
+            //태그 생성
+            const aTage = document.createElement("a");  //태그이름 적기
+            aTage.href = "https://www.naver.com";
+            aTage.target="_blank";
+            aTage.textContent = "Naver로~";
+            aTage.classList.add("style1");
+
+            //부모 얻기
+            const wrap = document.getElementById("wrap");
+
+            //부모에 추가
+            wrap.appendChild(aTage);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="addATag()">a 태그 생성</button>
+    <!--부모영역으로 정하기-->
+    <div id="wrap"></div>
+</body>
+</html>

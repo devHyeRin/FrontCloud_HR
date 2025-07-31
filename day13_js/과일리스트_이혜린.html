@@ -74,24 +74,24 @@
     <script>
         function save() {
             const fruitInput = document.querySelector("#fruitInput");
-            const showInput = document.querySelector("#showInput");
+            const showInput = document.querySelector(".showInput");
             const fruit = fruitInput.value;
 
             if (fruit !== "") {
                 let ul = showInput.querySelector("ul");
-                if (ul == null) {
+                if (ul == null) {   //ul이 없으면
                     ul = document.createElement("ul");
+                    //부모 추가 -> showInput
                     showInput.appendChild(ul);
                 }
-
+                //ul이 있으니까 li만 생성
                 const li = document.createElement("li");
                 li.textContent = fruit;
+                //부모 추가 -> ul
                 ul.appendChild(li);
-
+                //입력창 비우기
                 fruitInput.value = "";
             }
-
-
         }
     </script>
 </head>
@@ -99,11 +99,13 @@
 <body>
     <div class="wrap">
         <h3>🍇좋아하는 과일🍇</h3>
-        <div class="fruitInput">
+        <div id="fruitInput">
             <input type="text" placeholder="과일을 입력해주세요" id="fruitInput">
             <button onclick="save()">저장</button>
         </div>
-        <div id="showInput"></div>
+        <div class="showInput">
+            <!--ul, li 동적태그 생성-->
+        </div>
     </div>
 </body>
 

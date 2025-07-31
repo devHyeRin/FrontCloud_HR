@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 900px;
+            /* border:1px solid black;*/
+            margin: 0 auto;
+            font-size: 12px;
+
+        }
+
+
+        table {
+            width: 900px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            width: 200px;
+            padding: 5px;
+        }
+
+        table caption {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 30px;
+
+        }
+
+
+        .total_wrap {
+            /* border:1px solid black;*/
+        }
+
+
+        #order {
+            border: 1px solid black;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            font-weight: bold;
+
+            padding: 5px;
+        }
+
+        #total-price {
+            color: red;
+        }
+    </style>
+
+    <script>
+
+        function calPrice(obj) { //obj 매개변수 -> 다른 이름 ok
+            //obj => 수량 input
+            //수량 찾기
+            let qty = parseInt(obj.value);  //모두가 글자기 때문에 숫자로 변환해야 함
+
+            //입력에 대한 유효성 체크
+            if(isNaN(qty) || qty < 0) qty = 0;
+
+            //수량 input 태그를 기준으로 가까운 tr 찾기
+            const tr = obj.closest("tr");
+
+            //가격 찾기
+            let price = tr.querySelector("td:nth-child(3)").textContent;
+            console.log(price);
+
+            price = parseInt(price);    //"4500" -> 4500
+
+            //금액 구하기
+            let amount = qty * price;
+
+            //금액 태그 찾기 -> 자기 줄에 있는 amt 클래스명인 태그 찾음
+            const amtTag = tr.querySelector(".amt");
+            amtTag.textContent = amount;
+
+            totalPrice();
+        }
+
+        //금액이 변경되면 전체 금액을 갱신 
+        //전체 금액 갱신하는 함수
+        function totalPrice() {
+            //금액을 다 가져와야 함 -> querySelectorAll
+            //금액이 있는 영역 모두 가져오기 (td의 amt 클래스명)
+            const amts = document.querySelectorAll(".amt");
+
+            //금액 누적하기
+            let sum = 0;
+
+            for (let i = 0; i < amts.length; i++) {
+                let item = amts[i]; //amts가 배열로 반환됨
+                console.log(item);  //해당 금액이 호출되어야 실행됨
+                let amount = parseInt(item.textContent);    //값 가져오기
+                sum += amount;  //금액 누적
+            }
+
+            //전체금액 영역에 넣어주기
+            //전체금액 표시될 영역 가져오기
+            const totalPrice = document.getElementById("total-price"); 
+            //전체금액 넣어주기
+            totalPrice.textContent = sum;
+
+        }
+
+        //체크되어 있는 항목 삭제하기
+        //금액갱신하기
+        function itemDelete() {
+            //체크 박스 모두 선택하기
+            const checkboxs = document.querySelectorAll(".cb");
+
+            checkboxs.forEach(function(box){
+                //checkbox가 선택되어 있으면 -> checkbox에서 가까운 tr 삭제하기
+
+                //checkbox에는 속성이 checked가 있다 -> 체크되어 있는지 확인할 때 사용
+                if(box.checked){    //체크되어 있으면 true, false
+                    const tr = box.closest("tr");   //tr 찾기
+                    tr.remove();    //tr이 삭제됨
+                }
+            });
+
+            //삭제가 되면 전체금액 갱신하기
+            totalPrice();
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="totalPrice()">
+    <!--onload : 페이지가 처음 로드될 때 0원이 아니고 금액이 처음부터 계산되게 나오도록-->
+    <div class="wrap">
+        <table>
+
+            <caption> Cart List </caption>
+
+            <thead>
+                <tr>
+                    <th>선택</th>
+                    <th>제품명</th>
+                    <th>단가</th>
+                    <th>수량</th>
+                    <th>금액</th>
+                </tr>
+
+            </thead>
+
+            <!--this를 사용하면 가까운 요소인 tr에서 찾기-->
+            <tbody id="list">
+                <tr>
+                    <td><input type="checkbox" class="cb"></td>
+                    <td>아메리카노</td>
+                    <td>4500</td>
+                    <td><input type="number" value="1" onkeyup="calPrice(this)"></td>
+                    <td class="amt">4500</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" class="cb"></td>
+                    <td>카페라떼</td>
+                    <td>5000</td>
+                    <td><input type="number" value="1" onkeyup="calPrice(this)"></td>
+                    <td class="amt">5000</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" class="cb"></td>
+                    <td>바닐라라떼</td>
+                    <td>5500</td>
+                    <td><input type="text" value="1" onkeyup="calPrice(this)"></td>
+                    <td class="amt">5500</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="total_wrap">
+            <p>
+                <button onclick="itemDelete()">삭제</button>
+            </p>
+            <p id="order">
+                결제 금액 <span id="total-price"> 0</span> 원
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -41,17 +41,18 @@
                         lottoNumbers.push(random);
             */
             //위의 코드를 반목문으로 바꾸기
-            /*
-            for (let i = 0; i < 6; i++) {
+            
+            for (let i = 1; i <= 6; i++) {
                 let random = Math.floor(Math.random() * 45) + 1;
-                lottoNumbers[i].push(random);
+                lottoNumbers.push(random);
             }
             return lottoNumbers;
-            */
+            
         }
 
         const result2 = getLottoNumber2();
         console.log(result2);
+        
 
         //중복되지 않게 임의의 숫자로
         function getLottoNumbers3() {

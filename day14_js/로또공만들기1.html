@@ -51,7 +51,7 @@
                 //2-2. 공 스타일 주기(추가)
                 ball.classList.add("lottoball");
                 //3. 랜덤 색깔 가져오기
-                ball.style.backgroundColor=getRandomColor2();
+                ball.style.backgroundColor=getRandomColor();
                 //2-4.부모에 공 div 추가하기
                 wrap.appendChild(ball);
             }
@@ -70,16 +70,17 @@
         }
 
         //랜덤 컬러 가져오기
-        function getRandomColor2() {
-            const colors = [
-                "red", "blue", "green", "yellow", "purple", "orange",
-                "pink", "brown", "cyan", "magenta", "lime", "teal",
-                "navy", "gold", "coral", "salmon", "beige", "khaki",
-                "olive", "maroon", "turquoise", "lavender", "violet"
-            ];
-            const randomIndex = Math.floor(Math.random() * colors.length);   // 0~ 배열의크기 전까지의 임의의 수 
-            return colors[randomIndex];
+        function getRandomColor() {
+            let r = Math.floor(Math.random() * 256);      //0~255
+            let g = Math.floor(Math.random() * 256);      //0~255
+            let b = Math.floor(Math.random() * 256);      //0~255
+
+            let rgbColor = `rgb(${r},${g},${b})`;
+            return rgbColor;
         }
+
+        const result = getRandomColor();
+        console.log(result);
     </script>
 </head>
 

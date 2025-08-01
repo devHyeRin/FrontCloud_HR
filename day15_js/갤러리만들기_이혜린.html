@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery-wrap {
+            width: 1200px;
+            height: 500px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .gallery {
+            height: 100%;
+            box-shadow: 0 2px 12px #333;
+            background-image: url(image/배너1.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .btn-wrap {
+            width: 30%;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: end;
+            right: 10px;
+        }
+
+        .btn {
+            width: 60px;
+            font-size: 23px;
+            padding: 5px;
+            background-color: #33333354;
+            color: white;
+            cursor: pointer;
+        }
+
+        .prev {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .next {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: #333333a1;
+        }
+
+        .gallery-img {
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .title {
+            font-size: 100px;
+            position: absolute;
+            top: 160px;
+            left: 30px;
+        }
+            
+    </style>
+    <script>
+        let imgNames = [
+            "image/배너1.jpg",
+            "image/배너2.jpg",
+            "image/배너3.jpg"
+        ];
+
+        let message = [
+            "HAPPY DAY⭐",
+            "SMILE😊",
+            ""
+        ];
+
+
+        let positions = [
+            {
+                top: "160px",
+                left: "30px"
+            },
+            {
+                top: "160px",
+                left: "700px"
+            },
+            {
+                top: "160px",
+                left: "200px"
+            }
+        ];
+
+
+        let index = 0;
+
+        function showImg(item) {
+            const gallery = document.querySelector(".gallery");
+            gallery.style.backgroundImage = "url(" + imgNames[item] + ")";
+            gallery.classList.add("gallery-img");
+
+            const title = document.querySelector(".title");
+            title.textContent = message[item];
+
+            const position = positions[item];
+
+            console.log(position);
+            title.style.top = position.top;
+            title.style.left = position.left;
+        }
+
+        //다음
+        function next() {
+            index++;
+
+            if (index >= imgNames.length) {
+                index = 0;
+            }
+
+            showImg(index);
+        }
+
+        //이전
+        function prev() {
+            index--;
+
+            if (index < 0) {
+                index = imgNames.length - 1;
+            }
+
+            showImg(index);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="gallery-wrap">
+        <div class="gallery"></div>
+        <div class="title">HAPPY DAY⭐</div>
+        <div class="btn-wrap">
+            <div class="prev btn" onclick="prev()">
+                < </div>
+                    <div class="next btn" onclick="next()"> > </div>
+            </div>
+        </div>
+</body>
+
+</html>

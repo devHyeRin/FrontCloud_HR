@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function addItem(){
+            //사용자 입력 내용
+            //.value 안하면 input 태그만 가져오는 것임
+            const item = document.getElementById("item").value;
+
+            //부모 영역 얻어오기
+            const itemList = document.getElementById("item-list");
+
+            //li태그 생성
+            const li = document.createElement("li");
+            // li.innerHTML = item;
+
+            const span = document.createElement("span");
+            span.textContent = item;
+            const button = document.createElement("button");
+            button.textContent = "삭제";
+
+            //클릭 이벤트 발생 시 호출
+            button.addEventListener("click", function(){
+                button.closest("li");   //버튼을 기준으로 가까운 li찾기
+                li.remove();    //찾은 li를 삭제
+            })
+            
+            li.appendChild(span);
+            li.appendChild(button);
+
+            //부모의 자식으로 추가
+            itemList.appendChild(li);
+
+        }
+
+        //버튼이 포함되어 있는 li 삭제
+        //기준 : 버튼 -> this 사용
+        //버튼을 기준으로 가까운 태그 li 찾기 -> closest 사용
+        function a(obj){
+            // alert("삭제된다");
+            const li = obj.closest("li");
+            li.remove();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="item">
+    <button onclick="addItem()">추가</button>
+
+    <ul id="item-list">
+        <!--li 동적 태그 추가-->
+    </ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item-wrap {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+
+            overflow: hidden;  /*부모보다 더 커진 것은 감추기*/
+        }
+
+        .item {
+            width: 300px;
+            height: 200px;
+            border: 1px solid rgb(198, 6, 6);
+
+            background-image: url("https://ssl.pstatic.net/melona/libs/1538/1538710/03a89aedb68ec2c503e5_20250630105418958.png");
+            background-position: center;
+            background-size: cover;
+
+            transition: 1s; /*실행시간*/
+        }
+
+        .item:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>scale 이용해서 커지는 이미지 만들기</h2>
+    <div class="item-wrap">
+        <!--div 배경에다가 이미지-->
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            height: 100px;
+            background-color: aqua;
+            
+            position: relative;
+        }
+        nav{
+            height: 60px;
+            background-color: blue;
+            padding: 10px;
+            /*padding을 했을 때 이걸 넣으면 박스 크기가 커지거나 그러지 않음!*/
+            box-sizing: border-box; 
+        }
+        section{
+            height: 600px;
+            background-color: yellow;
+        }
+        footer{
+            height: 100px;
+            background-color: aqua;
+
+            display: flex;
+        }
+
+        footer .item{
+            width: 33.3%;
+            border: 1px solid black;
+        }
+        header .title{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        header .search{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            width: 220px;
+        }
+        nav .menu{
+            list-style: none;
+            margin: 0;
+            display: flex;
+        }
+        nav .menu li{
+            padding-right: 10px;
+        }
+        .product-list{
+            list-style: none;
+            display: flex;
+            /*가운데 정렬 방법1*/
+            justify-content: center;
+            margin: 0;
+            /*가운데 정렬 방법2*/
+            /* width: 910px; */
+        }
+        .product-item{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+        .product-item img{
+            width: 300px;
+            height: 200px;
+        }
+        .btn{
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!--타이틀 이미지-->
+        <img src="" alt="타이틀 이미지" class="title">
+        <!--검색바-->
+        <div class="search">
+            <input type="text">
+            <div class="btn">검색</div>
+        </div>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li>로그인</li>
+            <li>로그아웃</li>
+            <li>홈으로</li>
+        </ul>
+    </nav>
+    <section>
+        <ul class="product-list">
+            <li class="product-item">
+                <img src="https://image2.lotteimall.com/goods/53/71/89/3043897153_14.jpg/dims/resizemc/640x360/optimize" alt="식품이미지">
+                <p>상품이름</p>
+                <p>1200원</p>
+            </li>
+            <li class="product-item">
+                <img src="https://image2.lotteimall.com/goods/53/71/89/3043897153_14.jpg/dims/resizemc/640x360/optimize" alt="식품이미지">
+                <p>상품이름</p>
+                <p>1200원</p>
+            </li>
+            <li class="product-item">
+                <img src="https://image2.lotteimall.com/goods/53/71/89/3043897153_14.jpg/dims/resizemc/640x360/optimize" alt="식품이미지">
+                <p>상품이름</p>
+                <p>1200원</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </footer>
+</body>
+</html>

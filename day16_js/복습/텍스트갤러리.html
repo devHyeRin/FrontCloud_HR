@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //문서가 로드 되었을 때 갤러리 내용을 가져와서 배열로 만들기
+        //배열의 첫번째 요소가 갤러리에 보이기
+
+        let message = [];    //어떤 내용이 들어갈지 모르기 때문에 선언만 하기
+        let index = 0;
+        function aa() {
+            const items = document.querySelectorAll(".gallery > div");
+
+            //1. gallery 클래스 안의 div 태그 가져와서 message 배열에 넣기
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                console.log(item, i);   // 태그를 가져옴
+                message.push(item.textContent);  // 태그 안의 값을 가져옴
+            }
+            console.log(message);
+
+            //2. 갤러리에 나올 첫번째 메시지 초기화 하기
+            const gallery = document.querySelector(".gallery");
+            gallery.textContent = message[0];
+        }
+
+        //3. 갤러리 배열의 다음 텍스트가 나오게 하기
+        function next() {
+            index++;
+            //4. 배열의 길이 :3 -> 3을 넘어가면 글자가 안나옴
+            if (index >= message.length) {
+                index = 0;  //5. index를 다시 0으로 초기화
+            }
+
+            const gallery = document.querySelector(".gallery");
+            gallery.textContent = message[index];
+            console.log(index);
+        }
+    </script>
+</head>
+
+<body onload="aa()">
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <div>하하</div>
+            <div>호호</div>
+            <div>히히</div>
+        </div>
+    </div>
+
+    <button onclick="next()">다음</button>
+</body>
+
+</html>

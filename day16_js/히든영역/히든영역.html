@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            text-align: center;
+
+            position: relative;
+        }
+        li img{
+            width: 300px;
+            height: 200px;
+        }
+        .hidden-wrap{
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+            background-color: aqua;
+
+            /*부모 li에 히든영역을 겹치기*/
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            opacity: 0; /*투명도 0 : 아예 안보임*/
+
+            transition: 0.5s;   /*보이는 시간 조절*/
+        }
+        
+        /*li부분에 마우스를 올렸을 때 히든 영역 보이기*/
+        li:hover .hidden-wrap{
+            opacity: 0.8; /*투명도 1 : 보임, 0.8 : 살짝 뒤에가 보임*/
+        }
+
+        .hidden-wrap .title{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="https://cdn.inflearn.com/public/courses/328592/cover/b8957940-b416-4f31-8ae1-1cd2c5b29f3a/HTML-CSS--IFL.png?f=avif">
+            <p>알코 html 강좌</p>
+            <p>초보과정</p>
+
+            <!--히든 영역-->
+            <!--li 부분에 히든 영역 붙이기-->
+            <div class="hidden-wrap">
+                <p class="title">html/css/js 강좌</p>
+                <p>알코강좌</p>
+                <p>가격 : 44,000원</p>
+                <button>구매</button>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li:nth-child(1){
+
+            background-color: blue;
+
+        }
+
+        li:nth-child(2){
+            
+            background-color: red;
+            position: relative;
+            left: 10px;
+        } 
+        
+        li:nth-child(3){
+            background-color: blueviolet;
+            
+        }         
+    </style>
+</head>
+<body>
+
+    <h2> position:relative </h2>
+    <p> 기존배치 흐름을 유지함 </p>     
+    <p> 기준은 현재위치를 기준으로  top, left  적용됨</p>
+    <p> 주로 부모영역을 기준으로 자식을 배치할 때  부모영역으로 사용됨 </p>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+   
+    </ul>
+</body>
+</html>

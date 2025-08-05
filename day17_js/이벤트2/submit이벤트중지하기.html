@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkLogin(){
+
+            let frm  = document.frm;
+            
+            let userid  = frm.userid;
+            let userpw = frm.userpw;
+            
+            if( userid.value ==""){
+                alert("아이디 입력");
+                userid.focus();
+                return false;
+            }else if( userpw.value ==""){
+                alert("비번입력");
+                userpw.focus();
+                return false;
+            }
+            return true;   //true가 리턴되면  submit기능이 정상적으로 실행됨,  false이면 submit기능이 중지됨
+
+        }
+    </script>
+</head>
+<body>
+    <h3>  submit 중지하기</h3>
+     
+
+    <!-- action에 값이 없으면 자신의 페이지를 요청한다.-->
+    <form name="frm"  action="" method="get"  onsubmit="return checkLogin()">  <!--  checkLogin()함수의 결과가 true이면  submit되고 false이면 submit 되지않음-->
+        <input type="text" name="userid" >
+        <input type="text" name="userpw">
+        <button typw="submit">로그인</button>
+    </form>
+ 
+</body>
+</html>

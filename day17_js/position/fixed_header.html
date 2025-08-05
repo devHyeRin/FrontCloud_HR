@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Position Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+    
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            
+            padding: 10px;
+            font-size: 20px;
+            color: rgb(37, 35, 35);
+            height: 100px;
+           /*  background-color: transparent;*/
+           background-color: antiquewhite;
+           opacity: 0.5;
+            border:1px solid black;
+        }
+
+        .content {
+            height: 5000px;
+            background-color: lightgreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>fixed</h2>
+
+    <p>     
+    기준	     :viewport(브라우저 창) 기준
+    스크롤 영향	  :스크롤해도 움직이지 않음 (항상 같은 위치 유지)
+    부모 요소와 무관 :	부모 요소의 position 설정과 무관하게 브라우저 전체 기준으로 동작
+    사용 예	 :   상단 고정 메뉴, 하단 고정 버튼, 팝업 등
+
+    </p>
+    <div class="header"> header영역</div>
+    <div class="content">
+        
+    </div>
+</body>
+</html>

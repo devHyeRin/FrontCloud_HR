@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkLogin(e) {           
+          e.preventDefault();    // submit 이벤트 중지하기  (submit기능이 되지 않도록 한다)
+        } 
+    </script>
+</head>
+<body>
+    <h3>Submit 중지하기</h3>
+    <!-- action에 값이 없으면 자신의 페이지를 요청한다.-->
+    <form name="frm" action="" method="get" onsubmit="checkLogin(event)">
+        <input type="text" name="userid" placeholder="아이디">
+        <input type="password" name="userpw" placeholder="비밀번호">
+        <button type="submit">로그인</button>
+    </form>
+    
+</body>
+</html>

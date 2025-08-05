@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li:nth-child(1){
+
+            background-color: blue;
+
+        }
+
+        li:nth-child(2){
+            
+            background-color: red;
+            position: absolute;
+        } 
+        
+        li:nth-child(3){
+
+            background-color: blueviolet;
+            
+        }         
+    </style>
+</head>
+<body>
+
+    <h2>  position:absolute </h2>
+
+    <p> 내용만큼 크기가 줄어듬</p>
+    <p> 기존의 배치흐름에서 빠짐</p>
+    <p> 기준이 되는 위치 ( 누구를 기준으로 배치가 되는가? )
+        absolute 요소는 가장 가까운 조상 요소 중에서 position: relative | absolute | fixed | sticky가 설정된 요소를 기준으로 위치를 잡는다
+        만약 그런 조상이 없다면 브라우저창(viewport)을 기준으로 한다.  
+    </p>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+   
+    </ul>
+</body>
+</html>

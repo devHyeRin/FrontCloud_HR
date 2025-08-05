@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .banner{
+            position: relative;
+            width: 60%;
+            height: 500px;
+            margin: 0 auto;
+            background-image:  url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/x58Gk2ZGU5AEBp25MQe2nhZhd5z.jpg'); 
+            background-repeat: no-repeat;  
+            background-size: cover;
+         }
+
+        /*가상요소 사용 */
+        
+        .banner::before{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: ''; /*내용이 없을 때 빈문자를 넣어줘야 함*/
+            /* 왼쪽에서 시작에서 오른쪽에서  블랙 -> 투명한 색*/
+            background: linear-gradient(to right , black, transparent);           
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+    </div> 
+</body>
+</html>

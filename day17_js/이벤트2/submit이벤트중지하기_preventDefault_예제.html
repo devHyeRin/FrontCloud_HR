@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkLogin(e) {
+            
+            e.preventDefault();  //이벤트 중지하기 
+
+            //입력이 되어있는지 확인하고 submit 보내기
+            
+            let frm = document.frm;
+            let userid = frm.userid;
+            let userpw = frm.userpw;
+            
+            if (userid.value === "") {
+                alert("아이디 입력");
+                userid.focus();
+                return ;
+            } else if (userpw.value === "") {
+                alert("비밀번호 입력");
+                userpw.focus();
+                return ;
+            }
+            
+           
+            frm.submit();   
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>Submit 중지하기</h3>
+
+    <!-- action에 값이 없으면 자신의 페이지를 요청한다.-->
+    <form name="frm" action="" method="get" onsubmit="checkLogin(event)">
+        <input type="text" name="userid" placeholder="아이디">
+        <input type="password" name="userpw" placeholder="비밀번호">
+        <button type="submit">로그인</button>
+    </form>
+</body>
+</html>

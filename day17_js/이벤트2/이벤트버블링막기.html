@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+ .depth1 {
+ 
+  width: 300px;
+  height: 300px;   
+  border: 1px solid black;
+}
+
+.depth2 {
+ 
+  width: 200px;
+  height: 200px;
+  border:1px solid black;
+  background-color: blue;
+  margin: 30px auto;
+}
+
+.depth3 {
+  font-size: 15pt;
+  color: white;
+ 
+  width: 100px;
+  height: 100px;
+  background-color: rgb(210, 96, 26);
+  border: 1px solid black;
+  margin:30px auto;
+}
+    </style>
+</head>
+<body>
+    
+    <h3>이벤트 버블링이란?</h3>
+    <p> 하위요소에서 상위요소로 이벤트가 전파되는 것을 말한다.</p>
+    <p>상위요소로 이벤트가 전파되는것을 막기위해서는  event.stopPropagation() 매서드를 사용할 수 있다.</p>
+     
+   
+    <div class="depth1" onClick="alert(this.className)">
+       
+      <div class="depth2" onClick="alert(this.className)">
+       
+        <div class="depth3" onClick="alert(this.className); event.stopPropagation(); ">
+          depth3
+        </div>
+      </div>    
+    </div>
+   
+</body>
+</html>

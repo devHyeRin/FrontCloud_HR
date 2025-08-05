@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner{
+            width: 1200px;
+            height: 600px;
+
+            /*div 태그에다가 이미지 적용할 때 이렇게 사용하기*/
+            background-image: url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/x58Gk2ZGU5AEBp25MQe2nhZhd5z.jpg');
+            background-position: center;   
+            background-size: cover;
+
+            position: relative;
+        }
+        .before{
+            /*부모 .banner와 크기 똑같이*/
+            width: 100%;
+            height: 100%;
+            /* background-color: #ccc; */
+            /* opacity: 0.4; */
+
+            /*부모를 기준으로 .before를 겹치게 하기*/
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /*그라데이션 할 수 있는 것*/
+            background: linear-gradient(to left, black, transparent);
+        }
+    </style>
+</head>
+<body>
+    <!--직접요소 실습-->
+    <div class="banner">
+        <!--가상요소x -> 직접요소!!-->
+        <div class="before"></div>
+    </div>
+</body>
+</html>

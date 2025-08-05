@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item::before{
+            /*html에 이 글자가 없는데 css로 가상요소 만들기*/
+            content: "^^ front";
+            background-color: antiquewhite;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <!--가상요소 before-->
+        <p>html</p>
+        <p>css</p>
+        <p>javascript</p>
+
+        <!--가상요소 after-->
+    </div>
+</body>
+</html>

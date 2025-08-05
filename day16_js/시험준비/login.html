@@ -136,15 +136,15 @@
             const userId = frm.userId;
             const userPw = frm.userPw;
 
-            if(userId.value === ""){
+            if (userId.value === "") {
                 alert("아이디 입력하세요");
                 userId.focus();
             }
-            else if(userPw.value === ""){
+            else if (userPw.value === "") {
                 alert("비밀번호 입력하세요");
                 userPw.focus();
             }
-            else{
+            else {
                 alert("로그인 성공");
             }
         }
@@ -179,7 +179,7 @@
                 <div class="login-info">
                     <input type="text" name="userId">
                     <input type="password" name="userPw">
-                    <button onclick="aa()">로그인</button>
+                    <button type="button" onclick="aa()">로그인</button>
                 </div>
             </form>
         </div>

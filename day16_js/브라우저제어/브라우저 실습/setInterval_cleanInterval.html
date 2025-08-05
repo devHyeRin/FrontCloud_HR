@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn-start">3초마다 텍스트가 바뀐다</button>
+    <button id="btn-close" onclick="stopChange()">그만</button>
+
+    <script>
+        const btnStart = document.getElementById("btn-start");
+        btnStart.addEventListener("click", function(){
+            //일정간격으로 특정코드 수행
+            //콜백함수, 밀리초
+            intervalId = setInterval(function(){    // 함수 이름 지정하기
+                alert("바뀐다");
+            }, 3000);
+        });
+
+        function stopChange(){
+            //setInterval() 함수로 실행시킨것을 중지하기
+            //clearInterval 함수 사용하기
+            clearInterval(intervalId);  //함수이름 지정한 거 매개변수 넣기
+        }
+    </script>
+</body>
+</html>

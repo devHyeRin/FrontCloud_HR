@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;  /* 1rem = 10px */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/*메인 색상 지정*/
+:root {
+  /* 배경 계열 */
+  --bg-main: #0f0f0f;   /* 전체 배경 */
+  --bg-sub: #111;       /* 서브 섹션 배경 */
+  --bg-hover: #1a1a1a;  /* hover 시 배경 */
+
+  /* 텍스트 계열 */
+  --text-main: #f5f5f5;
+  --text-sub: #cccccc;
+
+  /* 포인트 컬러 (골드톤) */
+  --point-gold: #ffd54f;
+  --point-gold-dark: #caa437;
+
+  /* 경계선 */
+  --border-dark: #222;
+}
+
+/* 나중에 추가하기
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+*/

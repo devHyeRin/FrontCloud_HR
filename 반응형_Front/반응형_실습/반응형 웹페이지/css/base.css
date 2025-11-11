@@ -8,6 +8,11 @@ html {
   font-size: 62.5%;  /* 1rem = 10px */
 }
 
+body {
+  font-size: 1.6rem; /* 16px */
+}
+
+
 a {
   text-decoration: none;
 }

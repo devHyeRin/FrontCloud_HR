@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .item{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+
+            position: relative;
+
+            overflow: hidden;   /*박스를 기준으로 넘친 hidden 영역 감추기*/
+        }
+
+        .item img{
+            width: 100%;      /*부모의 크기와 똑같이 해도 됨*/
+            height: 100%;
+        }
+
+        .hidden-desc{
+            border: 1px solid rgb(226, 10, 10);
+
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+
+            transition: 0.5s;
+        }
+
+        .item:hover .hidden-desc{
+            bottom: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <img src="imgs/p1.jpg">
+
+        <!--히든 영역-->
+        <div class="hidden-desc">
+            <h5>title</h5>
+            <p class="likes">300Likes</p>
+        </div>
+    </div>
+</body>
+</html>

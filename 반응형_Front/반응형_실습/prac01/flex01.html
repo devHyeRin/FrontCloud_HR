@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            height: 200px;
+
+            /*.item 클래스 태그의 부모에 flex 지정*/
+            display: flex;    
+            flex-direction: row;      /*주축 : 가로, 교차축 : 세로*/
+                                      /*현재 주축*/
+
+            /*가로정렬, 세로정렬 (정가운데 배치)*/
+            justify-content: center;  /*주축을 기준으로 가운데*/
+            align-items: center;      /*교차축을 기준으로 가운데*/
+        }
+
+        .item{
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+</body>
+</html>

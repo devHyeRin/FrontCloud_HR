@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/0c69fdf2c0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        header{
+            background-color: antiquewhite;
+            height: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner{
+            width: 1280px;
+            border: 1px solid black;
+
+            /*부모를 기준으로 정 가운데 배치 -> 부모에 display*/
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* inner 클래스의 모든 자식 요소 선택 */
+        .inner > div{
+            border: 1px solid black;
+        }
+
+        /*gnb 영역*/
+        .gnb{
+            display: flex;
+            flex-direction: row;   /*생략 가능*/
+        }
+        .gnb li{
+            padding-right: 10px;
+        }
+        
+        .trigger{
+            display: none;
+        }
+
+        /*모바일 구간
+        * 1. header : 높이 auto로 변경 (내용만큼 커지기)
+        * 2. inner 너비 : 100%로 변경
+        * 3. flex-direction : column 세로로 변경하기
+        * 4. gnb : gnb 영역 세로로 나오게 하기 -> flex-direction : column 
+        * 5. 햄(x 버튼) 보이게 하기
+        * 6. inner를 기준으로 햄(x) 오른쪽 끝 가장 위에 배치하기
+        */
+        @media (max-width: 768px) {
+            header{
+                height: auto;
+            }
+
+            .inner{
+                width: 100%;
+                flex-direction: column;
+
+                position: relative;
+            }
+
+            .gnb{
+                flex-direction: column;
+            }
+            .gnb li{
+                /* border: 1px solid black; */
+                text-align: center;
+                padding: 5px;
+            }
+
+            .sns{
+                text-align: center;
+            }
+
+            .trigger{
+                display: block;
+
+                position: absolute;   /*크기가 내용만큼 작아짐*/
+                top: 0;
+                right: 0;
+            }
+
+            .gnb, .sns{
+                display: none;
+            }
+            .gnb.on, .sns.on{
+                display: block;
+            }
+        }
+
+    </style>
+
+    <header>
+        <div class="inner">
+            <!--로고-->
+            <div>로고</div>
+
+            <!--메뉴-->
+            <ul class="gnb">
+                <li><a href="#none">Home</a></li>
+                <li><a href="#none">About</a></li>
+                <li><a href="#none">Location</a></li>
+                <li><a href="#none">Contact</a></li>
+            </ul>
+
+            <!--sns-->
+            <div class="sns">
+                <!--폰트 아썸 로고 사용-->
+                <a href="#none"><i class="fa fa-facebook"></i> </a>
+                <a href="#none"><i class="fa fa-twitter"></i> </a>
+                <a href="#none"><i class="fa fa-youtube-play"></i> </a>
+            </div>
+
+            <!--햄버거 아이콘 영역-->
+            <div class="trigger">X</div>
+        </div>
+    </header>
+
+    <script>
+        /*
+        let triggerE = document.querySelector(".trigger");
+
+        //gnb, sns영역 선택하기
+        let gnbE = document.querySelector(".gnb");
+        let snsE = document.querySelector(".sns");
+
+        //클릭 이벤트 발생 시
+        triggerE.addEventListener("click", function(){
+            gnbE.classList.toggle("on");
+            snsE.classList.toggle("on")
+        });
+        */
+
+        //jQuery로 코드 변경
+        $(".trigger").on("click", function(){
+            $(".gnb, .sns").toggleClass("on");
+        });
+
+    </script>
+</body>
+
+</html>

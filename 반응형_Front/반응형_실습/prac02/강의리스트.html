@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item {
+            width: 290px;
+            border: 0.5px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .item img {
+            width: 100%;
+            /*이미지 크기 : 부모만큼 (290px)*/
+        }
+
+        .title {
+            /* border: 1px solid black; */
+            display: block;
+            color: royalblue;
+            margin-top: 30px;
+        }
+
+        .price {
+            display: block;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .best {
+            background-color: pink;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /*여러줄로 나올 수 있도록 변경*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+
+        <!--강의아이템 박스-->
+        <div class="item">
+            <img src="imgs/course-01.png">
+            <h4>자바스크립트</h4>
+            <span class="title">웹개발</span>
+            <span class="price">61,000</span>
+            <span class="best">베스트샐러</span>
+        </div>
+    </div>
+</body>
+
+</html>

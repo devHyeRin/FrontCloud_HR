@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 950px;
+            border: 1px solid black;
+            margin: 0 auto;
+
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .header > div{
+            /* border: 1px solid black; */
+        }
+        
+        .gnb{
+            text-align: right;
+        }
+
+        .search-wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search{
+            padding: 10px;
+            background-image: url("imgs/search.png");
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: right;
+            border: none;  
+            outline: none;    /*input 클릭했을 때 선*/
+            border-bottom: 0.5px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!--상단영역 box-->
+        <div class="header">
+
+            <!--메뉴 영역-->
+            <div class="gnb">
+                <a href="#none">Photoshop</a>
+                <a href="#none">Illustrator</a>
+                <a href="#none">Publishing</a>
+            </div>
+
+            <div class="search-wrap">
+                <input type="text" placeholder="Search" class="search">
+                <button>Designer Profile</button>
+            </div>
+        </div>
+
+        <!--하단영역 box-->
+        <div>
+
+        </div>
+    </div>
+</body>
+</html>

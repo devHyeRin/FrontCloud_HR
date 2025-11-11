@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        header{
+            height: 200px;
+            background-color: blanchedalmond;
+        }
+
+        .inner{
+            width: 1280px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: blue;
+
+            position: relative;
+        }
+
+        .trigger{
+            /*부모를 기준으로 배치하기*/
+            position: absolute;
+            border: 1px solid red;
+
+            top: 0;
+            right: 0;
+
+            width: 25px;
+            height: 15px;
+            border: 1px solid red;
+        }
+        .trigger > div{
+            height: 1px;
+            width: 100%;
+            background-color: white;
+
+            position: absolute;
+        }
+        .trigger > div:nth-child(1){
+            top: 0;
+            left: 0;
+        }
+        .trigger > div:nth-child(2){
+            top: 50%;
+            left: 0;
+        }
+        .trigger > div:nth-child(3){
+            top: 100%;
+            left: 0;
+        }
+
+        /*active 이벤트 -> 3줄이 교차해서 X 모양이 됨*/
+        .trigger.active > div:nth-child(1){
+            top: 50%;
+            left: 0;
+            transform: rotate(45deg);   /*45도*/
+        }
+        .trigger.active > div:nth-child(2){
+            opacity: 0;        /*사라짐*/
+        }
+        .trigger.active > div:nth-child(3){
+            top: 50%;
+            left: 0;
+            transform: rotate(-45deg);
+        }
+
+        /*회전할 때 부드럽게 애니메이션 효과*/
+        .trigger > div{
+            transition: all 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <div class="trigger">
+                <!--3개의 선-->
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        let triggerE = document.querySelector(".trigger");
+
+        //클릭 이벤트 발생 시
+        triggerE.addEventListener("click", function(){
+            triggerE.classList.toggle("active")
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            border: 1px solid black;
+            height: 200px;
+
+            display: flex;
+            flex-direction: row;   /*기본(생략 가능)*/
+            
+        }
+
+        .item{
+            border: 1px solid black;
+
+        }
+
+        .item:nth-child(1){
+            /* width: 20%; */
+            /*가로 길이 지정도 되지만 flex 속성을 사용해서 지정 가능*/
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .item:nth-child(2){
+            /* width: 20%; */
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .item:nth-child(3){
+            /* width: 60%; */
+            flex: 4;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="item">a</div>  <!--nth-child(1)-->
+        <div class="item">b</div>
+        <div class="item">c</div>
+    </div>
+</body>
+</html>

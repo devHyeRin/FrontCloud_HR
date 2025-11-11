@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: skyblue;
+            height: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .inner{
+            width: 1280px;     /*헤더일 때 많이 사용하는 너비*/
+            height: 60px;
+            border: 1px solid black;
+
+            /*부모에 flex 지정 - 자식 요소에서 flex 속성 사용 가능*/
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .inner > div{
+            border: 1px solid black;
+        }
+
+        /*햄 버튼 - pc버전일 때 안 보임*/
+        .trigger{
+            display: none;
+        }
+
+        /*모바일일 때
+        * 1. header  80px ->  auto로 변경(내용만큼의 높이)
+        * 2. inner  1280px -> 100%
+        * 3. inner  가로배치 -> 세로배치 변경
+        * 4. 햄버거 아이콘 보이기(inner를 기준으로 오른쪽 끝에 배치하기)
+        */
+        @media (max-width: 768px){
+            header{
+                height: auto;
+            }
+
+            .inner{
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                text-align: center;
+
+                /* 부모로 지정하기*/
+                position: relative;
+            }
+
+            .trigger{
+                display: block;
+
+                /*부모를 기준으로 자식을 배치하기*/
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            .gnb, .sns{
+                display: none;
+            }
+
+            .gnb.on, .sns.on{
+                display: block;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!--inner-->
+        <div class="inner">
+            <div class="logo">로고</div>
+            <div class="gnb">메뉴</div>
+            <div class="sns">sns</div>
+            <div class="trigger">햄</div>  <!--x버튼으로 바뀜-->
+        </div>
+    </header>
+
+    <script>
+        let triggerE = document.querySelector(".trigger");
+        console.log(triggerE);
+
+        //gnb, sns영역 선택하기
+        let gnbE = document.querySelector(".gnb");
+        let snsE = document.querySelector(".sns");
+
+        //클릭 이벤트 발생 시
+        triggerE.addEventListener("click", function(){
+            gnbE.classList.toggle("on");
+            snsE.classList.toggle("on")
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    border: 1px solid black;
+    width: 100%;
+}
+
+header .inner{
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gnb ul{
+    display: flex;
+    gap: 10px;
+}
+
+.gnb li a:hover{
+    color: black;
+}
+
+.trigger{
+    border: 1px solid red;
+    width: 30px;
+    height: 30px;
+    display: none;
+    position: relative;
+}
+.trigger > div{
+    width: 100%;
+    height: 1px;
+    background: #333;
+    position: absolute;
+}
+
+.trigger > div:nth-child(1){
+    top: 0;
+}
+.trigger > div:nth-child(2){
+    top: 50%;
+}
+.trigger > div:nth-child(3){
+    top: 100%;
+}
+
+.trigger.active > div:nth-child(1){
+    top: 50%;
+    transform: translate(45deg);
+}
+.trigger.active > div:nth-child(2){
+    opacity: 0;
+}
+.trigger.active > div:nth-child(3){
+    top: 50%;
+    transform: translate(-45deg);
+}
+
+/*section1*/
+.hero{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero h2{
+    margin-bottom: 10px;
+}
+.hero p{
+    margin-bottom: 10px;
+}
+.btn-start{
+    padding: 5px 10px;
+    background: #ff6f00;
+    color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+/*section2*/
+.cards{
+    border: 1px solid black;
+    padding: 96px 16px;
+    background: #fafafa;
+    text-align: center;
+}
+.cards h2{
+    margin-bottom: 20px;
+}
+.card-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.card{
+    padding: 32px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card i {
+    font-size: 48px;
+    color: #ff6f00;
+    margin-bottom: 16px;
+}
+
+/*section3*/
+.login-section{
+    padding: 80px 16px;
+}
+.login-field{
+    border: 1px solid black;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.login-field label{
+    text-align: left;
+}
+.login-field input{
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.login-field button{
+    background: #ff6f00;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/*footer*/
+footer{
+    border: 1px solid black;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+footer .sns {
+    margin-top: 16px;
+}
+footer .sns i {
+    margin: 0 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px){
+    .gnb {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 200px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .gnb.on {
+        display: block;
+    }
+    .gnb ul {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .trigger {
+        display: block;
+    }
+}
